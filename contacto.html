@@ -3,14 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mi sitio e-commerce</title>
+    <title>Que Sea de Barro</title>
     <link rel="stylesheet" href="./style.css">
     <!-- Fontawesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 
 <body>
-    <header> 
+    <header>
         <nav>
             <a href="./index.html">
                 <img src="./img/LogoQueSea.png" alt="Logo" class="logo">
@@ -18,37 +18,39 @@
             <ul>
                 <li><a href="./index.html">Inicio</a></li>
                 <li><a href="./productos.html">Productos</a></li>
+                <li><a href="./bio.html">Sobre mí</a></li>
                 <li><a href="./contacto.html">Contacto</a></li>
-                <li><a href="./carrito.html">Carrito</a></li>
+                <li><a href="./carrito.html"><i class="fas fa-shopping-cart"></i></a></li>
             </ul>
         </nav>
     </header>
     <main>
-        <div class="container">
+        <div class="titulo">
             <h1>CONTACTO</h1>
+        </div>
+        <section class="contacto">
             <form class="formulario" action="https://formsubmit.co/florencia.rvarangot@gmail.com" method="post">
                 <div class="form-group">
-                    <label for="nombre">Nombre:</label>
-                    <input type="text" name="nombre" id="nombre" required>
-                </div>
-                <div class="form-group">
-                    <label for="mail">Mail:</label>
-                    <input type="email" name="mail" id="mail" required="true">
-                </div>
-                <div class="form-group">
-                    <label for="mensaje">Mensaje:</label>
-                    <textarea name="mensaje" id="mensaje" required></textarea>
-                </div>
-                <div class="form-group checkbox-group">
-                    <input type="checkbox" name="suscripcion" id="suscripcion" value="quiero">
-                    <label for="suscripcion">Quiero recibir información en mi correo.</label>
-                </div>
-                <div class="form-group">
-                    <button type="submit" id="button">Enviar</button>
-                </div>
+                <label for="nombre">Nombre:</label>
+                <input type="text" name="nombre" id="nombre" required>
+            </div>
+            <div class="form-group">
+                <label for="mail">Mail:</label>
+                <input type="email" name="mail" id="mail" required="true">
+            </div>
+            <div class="form-group">
+                <label for="mensaje">Mensaje:</label>
+                <textarea name="mensaje" id="mensaje" required></textarea>
+            </div>
+            <div class="form-group checkbox-group">
+                <input type="checkbox" name="suscripcion" id="suscripcion" value="quiero">
+                <label for="suscripcion">Quiero recibir información en mi correo.</label>
+            </div>
+            <div class="form-group">
+                <button type="submit" id="button">Enviar</button>
+            </div>
             </form>
-        </div>
-        
+        </section>
     </main>
     <footer class="footer"> 
         <ul>
@@ -60,6 +62,7 @@
         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus, animi.</p>
         <p class="copyright">© 2024 Todos los derechos reservados.</p>
     </footer>
+
 </body>
 
 </html>

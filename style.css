@@ -1,11 +1,99 @@
-* {
-    box-sizing: border-box;
-    margin: 0;
+
+/* PENDIENTE: 
+        - Agregar SECTIONS ok en index
+        - Agregar ROOT o HTML { font-size: 10px } #869f91 ok
+        - Hover al nav ok
+        - Revisar unidades de medidas:
+            RELATIVAS:
+                - em (base referencia su contenedor) - Fuentes
+                - rem (base referencia raiz (html 16px)) - Fuentes
+                - % - Altos, anchos
+            FLEXIBLES:
+                - vw: viewport width. 
+                    toma el tamaño del dispositivo, no contempla márgenes. Por lo gral se sale.
+                - vh: viewport height
+                - width 50%
+                - min-height: 100vh (una pantalla de alto)
+            ABSOLUTAS: Tratar de nunca usarlas.
+        - Revisar colores y tipografías:
+            - Unificar criterio de nombramiento: valor rgb o valor hexadecimal.
+        - Agregar CSS GRID
+
+        - Formular el readme
+        - Agregar imagenes a proyecto: /Static > /img
+        - Dar estilo a bio
+        - Barra de búsqueda / filtros en productos
+
+URGE
+-flexbox en todo index y usar grid solo en productos.html y/o reseñas?
+            
+*/
+:root{
+    --primary-color: #ffe4c4;
+    --secondary-color: #869f91;
+    --third-color:#2f4f4f;
+    --background-alternativo:#faebd7cc;
+    --border-radius: 0.25rem;
+    --box-shadow: 0 4px 8px #0000001a;
+    --transition-duration: 0.3s ease;
+    --font-size-large: 4rem;
+    --font-size-medium: 2.5rem;
+    --font-size-small: 1rem;
+    --font-size-mini: 0.875rem;
+}
+
+html{
     font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
+* {
+    box-sizing: border-box;
+    margin: 0;
+}
+
 body {
-    background-color: darkseagreen;
+    background-color: var(--secondary-color);
+    display: block;
+    margin-top: 90px;
+}
+
+h1 {
+    font-size: var(--font-size-large);
+    text-align: center;
+    color: var(--accent-color);
+    width: 100%;
+    margin: 10px 0;
+}
+
+h2 {
+    font-size: var(--font-size-medium);
+    color: var(--third-color);
+}
+
+h3 {
+    color: var(--primary-color);
+    font-size: var(--font-size-medium);
+    align-self: center;
+
+}
+
+a {
+    font-size: var(--font-size-small);
+    text-decoration: none;
+    color: #869f91;
+    font-weight: 400;
+    transition: color ;
+}
+
+a:hover {
+    color: var(--third-color);
+}
+
+html {
+    background-color: var(--background-color);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: var(--primary-color);
+    font-size: var(--font-size-base);
 }
 
 nav {
@@ -13,7 +101,7 @@ nav {
     top: 0;
     width: 100%;
 
-    background-color: rgba(250, 235, 215, 0.8);
+    background-color: var(--background-alternativo);
     /* background-color: antiquewhite; */
     /* opacity: 0.8; */
     
@@ -44,115 +132,210 @@ nav li {
     margin: 10 10px;
 }
 
-h1 {
-    font-size: 60px;
-    text-align: center;
-    color:bisque;
-    width: 100%;
-    margin: 0;
+/* BARRA DE BÚSQUEDA */
+
+/* .buscar-div{
+    display: inline;
+    width: 600px;
 }
 
-a {
-    font-size: 16px;
-    text-decoration: solid;
-    color:darkslategray;
-    font-weight: 400;
+.buscar-index{
+    border: 1px solid var(--secondary-color);
+    border-radius: 5px;
+    width: 200px;
+    height: 25px;
+} */
+
+.inicio a:hover,
+a:hover {
+    color: var(--third-color);
+    transform: scale(1.05);
 }
 
-.container {
-    justify-content: center;
-    /* flex-wrap: nowrap; */
-    flex-wrap: wrap;
-    /* Tiene que haber multi-linea (wrap) para que funcione el align-content */
-    /* align-content: stretch; */
-    margin-top: 90px;
-    align-content: center;
-}
-
-.container-inicio {
-    margin: 200px 90px;
+.inicio {
+    margin: 300px 150px;
     flex-direction: column;
-    padding: 200px;
     text-align: center;
     align-items: center;
 }
 
-.container,
-.container-inicio, 
-.destacados, 
-.titulo {
+.destacados-section {
     display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
+    color: var(--third-color);
 }
 
-.destacados {
-    justify-content: space-around;
-    padding: 15px;
+.destacados{
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    /* max-width: 1000px; */
 }
 
-.destacados h3 {
-    color: antiquewhite;
-
+.destacados-section a{
+    color:var(--third-color);
 }
 
-.container h1, 
-h3 {
-    text-align: center;
-    width: 100%;
-    margin: 0;
-}
-
-.container, 
-.productos, 
-.container-inicio, 
-.titulo-destacado {
+.productos,
+.biografia,
+.taller{
     padding: 20px;
 }
 
-.productos {
+.productos,
+.contacto {
     display: flex;
     flex-wrap: wrap;
-    gap: 20px;
     align-items: stretch;
-    /* justify-content: space-evenly; */
+}
+
+.productos {
+    gap: 20px;
+    justify-content: space-evenly;
     align-content: center;
 }
 
-.card {
-    border: 1px solid #ccc;
-    border-radius: 10px;
+.contacto {
+    justify-content: center;
+}
+
+.tarjeta {
+    border: 1px solid var(--primary-color);
+    border-radius: 0.25rem;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     overflow: hidden;
     width: 300px;
+    min-width: 200px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    min-height: 350px;
-    flex-basis: calc(33.333% - 40px);
     margin: 10px;
 }
 
-.card img {
+.tarjeta-boton{
+    align-self: center;
+    margin: 10px;
+}
+
+.tarjeta img {
     width: 100%;
     height: auto;
     padding: 0 8px;
     border-radius: 5%;
 }
 
-.card h2 {
+.tarjeta h2 {
     font-size: 25px;
     margin: 0.5em;
     text-align: center;
 }
 
-.card p {
+.tarjeta p {
     padding: 0 1em;
     flex-grow: 1;
     margin: 5px 0;
 }
 
-.card:hover {
+.productos a,
+.tarjeta a {
+    color: var(--primary-color);
+}
+
+.tarjeta-reseña i {
+    font-size: var(--font-size-mini);
+    text-shadow: 
+        1px 1px 0 var(--third-color),
+        -1px -1px 0 var(--third-color),
+        1px -1px 0 var(--third-color),
+        -1px 1px 0 var(--third-color),
+        1px 0 0 var(--third-color),
+        -1px 0 0 var(--third-color),
+        0 1px 0 var(--third-color),
+        0 -1px 0 var(--third-color);
+}
+
+.tarjeta:hover {
     transform: scale(1.05);
     transition: transform 0.3s ease;
+}
+
+.tarjeta-reseña {
+    background-color: var(--background-alternativo);
+    color:var(--third-color);
+    opacity: 90%;
+    max-width: 350px;
+    min-width: 150px;
+    max-height: fit-content;
+    min-height: fit-content;
+}
+
+.tarjeta-header {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.tarjeta-reseña h2 {
+    font-size: 1rem;
+    margin: 0.5em;
+    text-align: left;
+}
+
+.tarjeta-reseña p {
+    padding: 0 1em;
+    margin: 5px 0;
+    font-size: var(--font-size-mini);
+}
+
+.tarjeta-reseña i {
+    color: var(--primary-color);
+    margin-right: 0.25rem;
+}
+
+.reseñas-section {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
+}
+
+.reseñas-index{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.reseñas {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+.estrellas{
+    padding: 5px;
+}
+
+.ver-mas {
+    display: flex;
+    justify-content: center;
+    margin: 10px;
+}
+
+.ver-mas a {
+    color: var(--third-color);
+}
+
+.titulo{
+    padding-top: 30px;
+}
+
+.subtitulo{
+    display: flex;
+    justify-content: center;
+    padding: 15px 5px 5px 5px;
 }
 
 .formulario {
@@ -160,11 +343,11 @@ h3 {
     flex-wrap: wrap;
     gap: 20px;
     flex-direction: column;
-    border: solid antiquewhite;
+    border: solid var(--primary-color);
     border-radius: 5px;
     padding: 15px;
     margin: 20px;
-    background-color: rgba(250, 235, 215, 0.8);
+    background-color: var(--background-alternativo);
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     width: 80%;
     max-width: 800px;
@@ -177,9 +360,9 @@ h3 {
 }
 
 label {
-    margin-bottom: 5px;
+    margin: 5px;
     font-weight: bold;
-    color: darkslategray;
+    color: var(--third-color);
 }
 
 input[type="text"],
@@ -196,7 +379,7 @@ textarea {
 input[type="text"]:focus,
 input[type="email"]:focus,
 textarea:focus {
-    border-color: darkseagreen;
+    border-color: #8fbc8f;
     outline: none;
 }
 
@@ -213,17 +396,23 @@ button {
     padding: 10px 20px;
     border: none;
     border-radius: 5px;
-    background-color: darkseagreen;
-    color: antiquewhite;
-    font-size: 16px;
+    background-color: var(--third-color);
+    color: var(--primary-color);
+    font-size: var(--font-size-small);
     cursor: pointer;
-    transition: transform 0.3s ease;
+    transition: transform;
 }
 
-button:hover {
+.contacto button:hover {
     transform: scale(1.02);
-    background-color: darkseagreen;
-    color: white;
+    background-color: var(--secondary-color);
+}
+
+.productos button:hover,
+.destacados button:hover {
+    transform: scale(1.02);
+    background-color: var(--primary-color);
+    color: var(--third-color);
 }
 
 .form-group.checkbox-group {
@@ -234,19 +423,20 @@ button:hover {
 .checkbox-group label {
     font-weight: normal;
     font-style: italic;
-    color: darkslategray;
-    font-size: 14px;
+    color: var(--third-color);
+    font-size: var(--font-size-mini);
 }
 
 .footer {
-    background-color: antiquewhite;
-    padding: 20px;
+    background-color: var(--background-alternativo);
+    padding: 20px 20px 30px 20px;
     text-align: center;
     display: flex;
     flex-direction: column;
     height: 120px;
     width: 100%;
     justify-content: center;
+    margin: 30px 0 0 0;
 }
 
 .footer ul {
@@ -263,13 +453,18 @@ button:hover {
 
 .footer a {
     text-decoration: none;
-    color:darkslategray;
+    color:#2f4f4f;
     font-size: 24px;
 }
 
+.footer a:hover{
+    color:var(--secondary-color);
+    transform: scale(2);
+}
+
 .footer p {
-    font-size: 14px;
-    color:darkslategray;
+    font-size: var(--font-size-mini);
+    color:#2f4f4f;
     opacity: 0.6;
     margin: 5px;
     font-style: italic;
@@ -277,18 +472,18 @@ button:hover {
 
 .footer, .copyright {
     font-size: 12px;
-    color: rgba(0, 0, 0, 0.6);
+    color: #00000099;
 }
 
-/* Media queries - responsive */
+/* Media queries - responsive
 @media (max-width: 1200px) {
-    .card {
+    .tarjeta {
         flex-basis: calc(50% - 40px);
     }
 }
 
 @media (max-width: 768px) {
-    .card {
+    .tarjeta {
         flex-basis: calc(100% - 40px);
     }
-}
+} */

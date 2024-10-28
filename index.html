@@ -3,58 +3,165 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mi sitio e-commerce</title>
+    <title>Que Sea de Barro</title>
     <link rel="stylesheet" href="./style.css">
     <!-- Fontawesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
+
 <body>
-    <header> 
-        <nav>
+    <header>
+        <!-- <nav class="menu"> -->
+        <nav class="menu">
             <a href="./index.html">
                 <img src="./img/LogoQueSea.png" alt="Logo" class="logo">
             </a>
+            <!-- BARRA DE BÚSQUEDA -->
+            <!-- <div class="buscar-div">
+                <label for="isearch">Buscar:</label>
+                <input class="buscar-index" id="isearch" type="search">
+            </div> -->
             <ul>
                 <li><a href="./index.html">Inicio</a></li>
                 <li><a href="./productos.html">Productos</a></li>
+                <li><a href="./bio.html">Sobre mí</a></li>
                 <li><a href="./contacto.html">Contacto</a></li>
-                <li><a href="./carrito.html">Carrito</a></li>
+                <li><a href="./carrito.html"><i class="fas fa-shopping-cart"></i></a></li>
             </ul>
         </nav>
     </header>
+    
     <main>
-        <div class="container-inicio">
+        <section class="inicio">
             <h1>¡HOLA!</h1>
             <h2>Qué bueno tenerte de vuelta</h2>
-            <div>
+            <div class="ver-mas">
                 <a href="./productos.html" class="btn">Descubrir productos</a>
             </div>
-        </div>
-        <div class="titulo">
-            <h3>Productos Destacados</h3>
-        </div>
-        <section class="destacados">
-                <article class="card">
-                    <h2>Artículo 1</h2>
-                    <img src="https://picsum.photos/300/200?random=2" alt="Imagen 1">
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias, soluta.</p>
-                    <p>$15.000</p>
-                </article>
-                <article class="card">
-                    <h2>Artículo 2</h2>
-                    <img src="https://picsum.photos/300/200?random=3" alt="">
-                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. 
-                        Possimus iusto, ducimus aut aperiam placeat eius aspernatur pariatur optio adipisci ipsum!</p>
-                        <p>$15.000</p>
+        </section>
+        
+        <section class="destacados-section">    
+            <div class="subtitulo">
+                <h3>Productos destacados</h3>
+            </div>
+            <div class="destacados">
+                <a href="./detalle.html" class="tarjeta-link">
+                    <article class="tarjeta">
+                        <h2>Artículo 1</h2>
+                        <img src="https://picsum.photos/300/200?random=2" alt="Imagen 1">
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias, soluta.</p>
+                        <p>$ 15.000</p>
+                        <div class="tarjeta-boton">
+                            <button type="submit">¡Lo quiero!</button>
+                        </div>
                     </article>
-                <article class="card">
-                    <h2>Artículo 3</h2>
-                    <img src="https://picsum.photos/300/200?random=4" alt="">
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias, soluta.</p>
-                    <p>$15.000</p>
+                </a>
+                <a href="./detalle.html" class="tarjeta-link">
+                    <article class="tarjeta">
+                        <h2>Artículo 2</h2>
+                        <img src="https://picsum.photos/300/200?random=3" alt="">
+                        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+                            Possimus iusto, ducimus aut aperiam placeat eius aspernatur pariatur optio adipisci ipsum!</p>
+                        <p>$15.000</p>
+                        <div class="tarjeta-boton">
+                            <button type="submit">¡Lo quiero!</button>
+                        </div>
+                    </article>
+                </a>
+                <a href="./detalle.html" class="tarjeta-link">
+                    <article class="tarjeta">
+                        <h2>Artículo 3</h2>
+                        <img src="https://picsum.photos/300/200?random=4" alt="">
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias, soluta.</p>
+                        <p>$15.000</p>
+                        <div class="tarjeta-boton">
+                            <button type="submit">¡Lo quiero!</button>
+                        </div>
+                    </article>
+                </a>
+                <a href="./detalle.html" class="tarjeta-link">
+                    <article class="tarjeta">
+                        <h2>Artículo 4</h2>
+                        <img src="https://picsum.photos/300/200?random=5" alt="">
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias, soluta.</p>
+                        <p>$15.000</p>
+                        <div class="tarjeta-boton">
+                            <button type="submit">¡Lo quiero!</button>
+                        </div>
+                    </article>
+                </a>
+            </div>
+            <div class="ver-mas">
+                <a href="./productos.html">Ver todos</a>
+            </div>
+        </section> 
+        
+        <section class="reseñas-section">
+            <div class="subtitulo">
+                <h3>Opiniones</h3>
+            </div>
+            <div class="reseñas-index">
+                <article class="tarjeta tarjeta-reseña">
+                    <div class="tarjeta-header">
+                        <h2>Nombre</h2>
+                        <div class="estrellas">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                    </div>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi, eos.</p>
                 </article>
-            </section>
-        </main>
+                <article class="tarjeta tarjeta-reseña">
+                    <div class="tarjeta-header">
+                        <h2>Nombre</h2>
+                        <div class="estrellas">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                    </div>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi, eos.</p>
+                </article>
+                <article class="tarjeta tarjeta-reseña">
+                    <div class="tarjeta-header">
+                        <h2>Nombre y apellido</h2>
+                        <div class="estrellas">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                    </div>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam aliquid vel totam fuga voluptatem nemo odio fugiat 
+                        praesentium. Accusantium, pariatur.</p>
+                    </article>
+                    <article class="tarjeta tarjeta-reseña">
+                        <div class="tarjeta-header">
+                            <h2>Nombre</h2>
+                            <div class="estrellas">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi, eos.</p>
+                    </article>
+                </div>
+                <div class="ver-mas">
+                    <a href="./bio.html">Ver más</a>
+                </div>
+        </section>
+
+
+    </main>
+
     <footer class="footer"> 
         <ul>
             <li><a href="https://www.github.com" target="_blank"><i class="fa-brands fa-github"></i></a></li>
@@ -65,5 +172,6 @@
         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus, animi.</p>
         <p class="copyright">© 2024 Todos los derechos reservados.</p>
     </footer>
+
 </body>
 </html>
