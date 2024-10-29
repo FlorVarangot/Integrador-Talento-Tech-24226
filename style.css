@@ -21,11 +21,10 @@
 
         - Formular el readme
         - Agregar imagenes a proyecto: /Static > /img
-        - Dar estilo a bio
-        - Barra de búsqueda / filtros en productos
+        - Barra de búsqueda / filtros en productos (?)
 
 URGE
--flexbox en todo index y usar grid solo en productos.html y/o reseñas?
+-flexbox en todo index y usar grid solo en productos.html y/o reseñas? bio?
             
 */
 :root{
@@ -130,6 +129,10 @@ nav ul {
 
 nav li {
     margin: 10 10px;
+}
+
+p{
+    text-align: justify;
 }
 
 /* BARRA DE BÚSQUEDA */
@@ -295,22 +298,6 @@ a:hover {
     margin-right: 0.25rem;
 }
 
-/* .reseñas-section {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    align-items: center;
-} */
-
-
-/* .reseñas {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    grid-auto-rows: auto;
-    gap: 20px;
-    padding: 20px;
-} */
-
 .reseñas-section .grid-reseñas {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -428,20 +415,25 @@ button {
 
 .biografia,
 .taller{
-    width: 90%;
     line-height: 1.5;
-    text-align: justify;
+    max-width: 90vw;
+    margin:auto;
+}
+
+.biografia img,
+.taller img{
+    max-width: 100%;
+    border-radius:5px;
+    margin: 5px;
 }
 
 .biografia img{
-    width: 180px;
-    border-radius: 5px;
     float: left;
     margin-right: 15px;
 }
 
-.taller img{
-
+.imagenes-taller{
+    text-align: center;
 }
 
 .form-group.checkbox-group {
@@ -497,6 +489,7 @@ button {
     opacity: 0.6;
     margin: 5px;
     font-style: italic;
+    text-align: center;
 }
 
 .footer, .copyright {
