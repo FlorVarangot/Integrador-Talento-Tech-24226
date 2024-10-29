@@ -1,5 +1,6 @@
-# TÍTULO: MI SITIO
-Descripción del sitio, lenguajes, tecnologías, etcs.
+# TP INTEGRADOR FRONT END JS
+## Sitio e-commerce
+Descripción del sitio, consigna, lenguajes, tecnologías, etcs.
 
-## SUBTÍTULO: Sobre otras cosas
+## Sobre Que Sea:
 Más descripciones...# Integrador-Talento-Tech-24226
