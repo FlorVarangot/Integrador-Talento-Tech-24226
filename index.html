@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Que Sea de Barro</title>
-    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="./static/css/style.css">
     <!-- Fontawesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
@@ -14,19 +14,14 @@
         <!-- <nav class="menu"> -->
         <nav class="menu">
             <a href="./index.html">
-                <img src="./img/LogoQueSea.png" alt="Logo" class="logo">
+                <img src="./static/img/LogoQueSea.png" alt="Logo" class="logo">
             </a>
-            <!-- BARRA DE BÚSQUEDA -->
-            <!-- <div class="buscar-div">
-                <label for="isearch">Buscar:</label>
-                <input class="buscar-index" id="isearch" type="search">
-            </div> -->
             <ul>
                 <li><a href="./index.html">Inicio</a></li>
-                <li><a href="./productos.html">Productos</a></li>
-                <li><a href="./bio.html">Sobre mí</a></li>
-                <li><a href="./contacto.html">Contacto</a></li>
-                <li><a href="./carrito.html"><i class="fas fa-shopping-cart"></i></a></li>
+                <li><a href="./templates/productos.html">Productos</a></li>
+                <li><a href="./templates/bio.html">Sobre mí</a></li>
+                <li><a href="./templates/contacto.html">Contacto</a></li>
+                <li><a href="./templates/carrito.html"><i class="fas fa-shopping-cart"></i></a></li>
             </ul>
         </nav>
     </header>
@@ -35,17 +30,27 @@
         <section class="inicio">
             <h1>¡HOLA!</h1>
             <h2>Qué bueno tenerte de vuelta</h2>
-            <div class="ver-mas">
-                <a href="./productos.html" class="btn">Descubrir productos</a>
-            </div>
+                <a href="./templates/productos.html" class="ver-mas">Descubrir productos</a>            
         </section>
+        
+        <!-- BARRA DE BÚSQUEDA -->
+            
+        <!-- <div class="search">
+            <h4 class="search-title">¿Qué estás buscando?</h2>
+            <input type="text" class="input-search" placeholder="Buscar...">
+        </div> -->
+
+        <!-- <div class="buscar-div">
+            <label for="isearch">Buscar:</label>
+            <input class="buscar-index" id="isearch" type="search">
+        </div> -->
         
         <section class="destacados-section">    
             <div class="subtitulo">
                 <h3>Productos destacados</h3>
             </div>
             <div class="destacados">
-                <a href="./detalle.html" class="tarjeta-link">
+                <a href="./templates/detalle.html" class="tarjeta-link">
                     <article class="tarjeta">
                         <h2>Artículo 1</h2>
                         <img src="https://picsum.photos/300/200?random=2" alt="Imagen 1">
@@ -56,7 +61,7 @@
                         </div>
                     </article>
                 </a>
-                <a href="./detalle.html" class="tarjeta-link">
+                <a href="./templates/detalle.html" class="tarjeta-link">
                     <article class="tarjeta">
                         <h2>Artículo 2</h2>
                         <img src="https://picsum.photos/300/200?random=3" alt="">
@@ -68,7 +73,7 @@
                         </div>
                     </article>
                 </a>
-                <a href="./detalle.html" class="tarjeta-link">
+                <a href="./templates/detalle.html" class="tarjeta-link">
                     <article class="tarjeta">
                         <h2>Artículo 3</h2>
                         <img src="https://picsum.photos/300/200?random=4" alt="">
@@ -79,7 +84,7 @@
                         </div>
                     </article>
                 </a>
-                <a href="./detalle.html" class="tarjeta-link">
+                <a href="./templates/detalle.html" class="tarjeta-link">
                     <article class="tarjeta">
                         <h2>Artículo 4</h2>
                         <img src="https://picsum.photos/300/200?random=5" alt="">
@@ -92,27 +97,51 @@
                 </a>
             </div>
             <div class="ver-mas">
-                <a href="./productos.html">Ver todos</a>
+                <a href="./templates/productos.html">Ver todos</a>
             </div>
         </section> 
         
-        <section class="reseñas-section">
-            <div class="subtitulo">
-                <h3>Opiniones</h3>
-            </div>
-            <div class="grid-reseñas">
-                <article class="tarjeta tarjeta-reseña">
-                    <div class="tarjeta-header">
-                        <h2>Nombre</h2>
-                        <div class="estrellas">
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                        </div>
+        <section class="reseñas-section-index">
+            <h3 class="item-grid">Opiniones</h3>
+            <article class="tarjeta tarjeta-reseña">
+                <div class="tarjeta-header">
+                    <h2>Nombre</h2>
+                    <div class="estrellas">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
                     </div>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi, eos.</p>
+                </div>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi, eos.</p>
+            </article>
+            <article class="tarjeta tarjeta-reseña">
+                <div class="tarjeta-header">
+                    <h2>Nombre</h2>
+                    <div class="estrellas">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                </div>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi, eos.</p>
+            </article>
+            <article class="tarjeta tarjeta-reseña">
+                <div class="tarjeta-header">
+                    <h2>Nombre y apellido</h2>
+                    <div class="estrellas">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                </div>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam aliquid vel totam fuga voluptatem nemo odio fugiat 
+                    praesentium. Accusantium, pariatur.</p>
                 </article>
                 <article class="tarjeta tarjeta-reseña">
                     <div class="tarjeta-header">
@@ -122,43 +151,13 @@
                             <i class="fas fa-star"></i>
                             <i class="fas fa-star"></i>
                             <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
                         </div>
                     </div>
                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi, eos.</p>
                 </article>
-                <article class="tarjeta tarjeta-reseña">
-                    <div class="tarjeta-header">
-                        <h2>Nombre y apellido</h2>
-                        <div class="estrellas">
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                        </div>
-                    </div>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam aliquid vel totam fuga voluptatem nemo odio fugiat 
-                        praesentium. Accusantium, pariatur.</p>
-                    </article>
-                    <article class="tarjeta tarjeta-reseña">
-                        <div class="tarjeta-header">
-                            <h2>Nombre</h2>
-                            <div class="estrellas">
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                            </div>
-                        </div>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi, eos.</p>
-                    </article>
-                </div>
-                <div class="ver-mas">
-                    <a href="./bio.html">Ver más</a>
-                </div>
-        </section>
-    </main>
+                    <a href="./templates/bio.html" class="ver-mas item-grid">Ver más</a>
+                </section>
+            </main>
 
     <footer class="footer"> 
         <ul>

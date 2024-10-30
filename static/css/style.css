@@ -19,12 +19,14 @@
             - Unificar criterio de nombramiento: valor rgb o valor hexadecimal.
         - Agregar CSS GRID
 
-        - Formular el readme
+        - Formular el readme OK
         - Agregar imagenes a proyecto: /Static > /img
         - Barra de búsqueda / filtros en productos (?)
 
 URGE
 -flexbox en todo index y usar grid solo en productos.html y/o reseñas? bio?
+-Mediaqueries
+-archivos e img a proyecto
             
 */
 :root{
@@ -53,7 +55,8 @@ html{
 body {
     background-color: var(--secondary-color);
     display: block;
-    margin-top: 90px;
+    margin-top: 70px;
+    height: 100vh;
 }
 
 h1 {
@@ -270,7 +273,7 @@ a:hover {
     color:var(--third-color);
     opacity: 90%;
     max-width: 350px;
-    min-width: 150px;
+    /* min-width: 150px; */
     max-height: fit-content;
     min-height: fit-content;
 }
@@ -298,11 +301,33 @@ a:hover {
     margin-right: 0.25rem;
 }
 
-.reseñas-section .grid-reseñas {
+.reseñas-section-index {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    grid-auto-rows: auto;
+    grid-template-rows: 1fr 1.5fr 1.5fr .5fr;
+    /* height: 40vh; */
     gap: 10px;
+    padding: 10px;
+    justify-items: center;
+}
+
+.ver-mas {
+    display: flex;
+    justify-content: center;
+    margin: 10px;
+    color:var(--third-color);
+}
+
+.item-grid{
+    grid-column: 1 / span 3;
+    /* background-color: #fff; */
+    text-align: center;
+}
+
+.reseñas-section {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: auto;
     padding: 10px;
     justify-items: center;
 }
@@ -311,15 +336,7 @@ a:hover {
     padding: 5px;
 }
 
-.ver-mas {
-    display: flex;
-    justify-content: center;
-    margin: 10px;
-}
 
-.ver-mas a {
-    color: var(--third-color);
-}
 
 .titulo{
     padding-top: 30px;
@@ -457,7 +474,7 @@ button {
     height: 120px;
     width: 100%;
     justify-content: center;
-    margin: 30px 0 0 0;
+    margin: 20px 0 0 0;
 }
 
 .footer ul {
@@ -497,15 +514,16 @@ button {
     color: #00000099;
 }
 
-/* Media queries - responsive
-@media (max-width: 1200px) {
-    .tarjeta {
-        flex-basis: calc(50% - 40px);
-    }
+/* .search{
+    height: 300px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
-@media (max-width: 768px) {
-    .tarjeta {
-        flex-basis: calc(100% - 40px);
-    }
+.search-title{
+    margin:5px;
 } */
+
+

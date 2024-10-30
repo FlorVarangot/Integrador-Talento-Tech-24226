@@ -1,0 +1,22 @@
+@media screen and (min-width: 768px){
+
+
+}
+
+@media screen and (min-width: 1024px){
+
+
+}
+
+/* Media queries - responsive
+@media (max-width: 1200px) {
+    .tarjeta {
+        flex-basis: calc(50% - 40px);
+    }
+}
+
+@media (max-width: 768px) {
+    .tarjeta {
+        flex-basis: calc(100% - 40px);
+    }
+} */
