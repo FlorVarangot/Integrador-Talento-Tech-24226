@@ -98,6 +98,19 @@ function mostrarMensajePago() {
     }, 3000);
 }
 
+// función para actualizar etiqueta de cantidades en carrito
+function actualizarCantidadCarrito() {
+    const carrito = JSON.parse(localStorage.getItem('carrito')) || [];
+    const carritoCantidad = carrito.reduce((total, producto) => total + producto.cantidad, 0);
+    const carritoCantidadSpan = document.getElementById('carrito-cantidad');
+
+    if (carritoCantidad > 0) {
+        carritoCantidadSpan.textContent = carritoCantidad;
+        carritoCantidadSpan.style.display = 'block';
+    } else {
+        carritoCantidadSpan.style.display = 'none';
+    }
+}
 
 // Función para agregar al carrito
 const carrito = JSON.parse(localStorage.getItem('carrito')) || [];
@@ -116,6 +129,7 @@ function agregarAlCarrito(id) {
             }
             localStorage.setItem('carrito', JSON.stringify(carrito));
             mostrarMensajeConfirmacion(`${producto.Nombre} ha sido agregado al carrito.`);
+            actualizarCantidadCarrito();
             setTimeout(() => {
             const currentPath = window.location.pathname;
             if (currentPath.includes('index.html')) {
@@ -177,6 +191,8 @@ function listarCarrito() {
 
 // Manejo de eventos de clic en botones desde carrito (prod-vaciar-pagar)
 document.addEventListener('DOMContentLoaded', () => {
+    actualizarCantidadCarrito();
+
     if (document.getElementById('ver-mas-productos')) {
         document.getElementById('ver-mas-productos').addEventListener('click', () => {
             window.location.href = './productos.html';
