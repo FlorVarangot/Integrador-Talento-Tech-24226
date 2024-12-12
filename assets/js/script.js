@@ -94,7 +94,7 @@ function mostrarMensajePago() {
     mensajePagoDiv.style.display = 'block';
     setTimeout(() => {
       mensajePagoDiv.style.display = 'none';
-      window.location.href = './index.html';
+      window.location.href = '../index.html';
     }, 3000);
 }
 
@@ -120,28 +120,33 @@ function agregarAlCarrito(id) {
     .then(data => {
         const producto = data.find(p => p.Id === id);
         if (producto) {
-            const productoEnCarrito = carrito.find(p => p.Id === id);
+            const productoEnCarrito = carrito.find(p => p.id === id);
             if (productoEnCarrito) {
-            productoEnCarrito.cantidad += 1;
+                productoEnCarrito.cantidad += 1;
             } else {
-            producto.cantidad = 1;
-            carrito.push(producto);
+            const nuevoProducto = {
+                id: producto.Id,
+                nombre: producto.Nombre,
+                precio: parseFloat(producto.Precio.replace(/[^0-9.-]+/g, "")),
+                cantidad: 1
+            };
+            carrito.push(nuevoProducto);
             }
             localStorage.setItem('carrito', JSON.stringify(carrito));
             mostrarMensajeConfirmacion(`${producto.Nombre} ha sido agregado al carrito.`);
             actualizarCantidadCarrito();
             setTimeout(() => {
-            const currentPath = window.location.pathname;
-            if (currentPath.includes('index.html')) {
-                window.location.href = './pages/carrito.html';
-            } else {
-                window.location.href = './carrito.html';
-            }
+                const currentPath = window.location.pathname;
+                if (currentPath.includes('index.html')) {
+                    window.location.href = './pages/carrito.html';
+                } else {
+                    window.location.href = './carrito.html';
+                }
             }, 3000);
         }
     })
     .catch(error => console.error('Error al cargar el archivo JSON:', error));
-}
+}  
 
 // Función para listar productos en el carrito
 function listarCarrito() {
@@ -176,18 +181,17 @@ function listarCarrito() {
             ${producto.cantidad}
             <button class="incrementar" data-id="${producto.id}">+</button>
           </td>
-          <td>$${producto.precio}</td>
-          <td>$${totalParcial}</td>
-          <td><button class="eliminar" data-id="${producto.id}"><i class="fa-regular fa-trash-can"></i></button></td>
+          <td>$${producto.precio.toFixed(2)}</td>
+          <td>$${totalParcial.toFixed(2)}</td>
+          <td><button class="eliminar" data-id="${producto.id}">Eliminar</button></td>
         `;
         carritoItems.appendChild(productoRow);
       });
-      
-      totalFinal.textContent = total;
+
+      totalFinal.textContent = total.toFixed(2);
     }
-    
     console.log('Productos en Carrito:', carrito);
-}  
+} 
 
 // Manejo de eventos de clic en botones desde carrito (prod-vaciar-pagar)
 document.addEventListener('DOMContentLoaded', () => {
