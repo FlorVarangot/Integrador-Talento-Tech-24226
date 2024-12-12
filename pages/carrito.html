@@ -32,9 +32,37 @@
     </header>
     <main>
         <div class="titulo">
-            <h1>CARRITO</h1>
+          <h1>CARRITO</h1>
         </div>
-    </main>
+        <div id="carrito"></div>
+        <div id="mensaje-carrito-vacio" class="mensaje-carrito-vacio">
+          <p>Aún no hay productos en el carrito.</p>
+          <a href="./productos.html">Ver productos</a>
+        </div>
+        <div id="detalle-carrito" class="detalle-carrito">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Producto</th>
+                        <th>Cantidad</th>
+                        <th>Precio Unitario</th>
+                        <th>Total Parcial</th>
+                        <th>Acciones</th>
+                    </tr>
+                </thead>
+                <tbody id="carrito-items"></tbody>
+            </table>
+            <div class="total-final">
+                <button id="ver-mas-productos">Ver más productos</button>
+                <div class="acciones-carrito">
+                    <button id="vaciar-carrito">Vaciar Carrito</button>
+                    <button id="ir-a-pagar">Ir a Pagar</button>
+                </div>
+            </div>
+        <div id="mensaje-pago" class="mensaje-pago"></div>          
+        </div>
+      </main>
+      
     <footer class="footer"> 
         <ul>
             <li><a href="https://www.instagram.com" target="_blank"><i class="fab fa-instagram"></i></a></li>
@@ -44,5 +72,6 @@
         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus, animi.</p>
         <p class="copyright">© 2024 Todos los derechos reservados.</p>
     </footer>
+    <script src="../assets/js/script.js"></script>
 </body>
 </html>

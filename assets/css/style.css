@@ -310,7 +310,53 @@ a:hover {
     padding: 5px;
 }
 
+.mensaje-confirmacion {
+    display: none;
+    background-color: #4caf50;
+    color: white;
+    padding: 10px;
+    position: fixed;
+    top: 10px;
+    right: 10px;
+    z-index: 1000;
+    border-radius: 5px;
+}
 
+.mensaje-carrito-vacio {
+    display: none;
+    text-align: center;
+    margin-top: 20px;
+}
+
+.mensaje-carrito-vacio p {
+    font-size: 18px;
+    color: #333;
+}
+
+.mensaje-carrito-vacio a {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 10px 20px;
+    background-color: #4caf50;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+.mensaje-pago {
+    display: none;
+    text-align: center;
+    background-color: #4caf50;
+    color: white;
+    padding: 10px;
+    position: fixed;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1000;
+    border-radius: 5px;
+}
+  
 
 .titulo{
     padding-top: 30px;
@@ -321,6 +367,52 @@ a:hover {
     justify-content: center;
     padding: 15px 5px 5px 5px;
     text-align: left;
+}
+
+.detalle-carrito {
+    display: none;
+    margin-top: 20px;
+}
+
+.detalle-carrito table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.detalle-carrito th, .detalle-carrito td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+}
+
+.detalle-carrito th {
+    background-color: #f2f2f2;
+}
+
+.total-final {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 20px;
+}
+  
+.total-final button {
+    padding: 10px 20px;
+    background-color: var(--third-color);
+    color: var(--primary-color);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+  
+.total-final button:hover {
+    /* background-color: var(--secondary-color); */
+    transform: scale(1.05);
+}
+  
+.acciones-carrito {
+    display: flex;
+    gap: 10px;
 }
 
 .formulario {
