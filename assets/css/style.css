@@ -247,10 +247,8 @@ a:hover {
     background-color: var(--background-alternativo);
     color:var(--third-color);
     opacity: 90%;
-    max-width: 350px;
-    /* min-width: 150px; */
-    max-height: fit-content;
-    min-height: fit-content;
+    width: 70%;
+    height: 90%;
 }
 
 .tarjeta-header {
@@ -280,7 +278,6 @@ a:hover {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: 1fr 1.5fr 1.5fr .5fr;
-    /* height: 40vh; */
     gap: 10px;
     padding: 10px;
     justify-items: center;
@@ -313,15 +310,22 @@ a:hover {
 
 .mensaje-confirmacion {
     display: none;
-    background-color: #4caf50;
+    background-color: var(--third-color);
     color: white;
-    padding: 10px;
-    position: fixed;
-    top: 10px;
-    right: 10px;
+    padding: 15px;
+    margin-top: 100px;
+    position: relative;
     z-index: 1000;
     border-radius: 5px;
 }
+
+.toast {
+    position: fixed;
+    top: 11%;
+    right: 2%;
+    z-index: 1050;
+}
+  
 
 .mensaje-carrito-vacio {
     display: none;
@@ -418,13 +422,12 @@ a:hover {
 
 .carrito-cantidad {
     position: absolute;
-    top: -10px;
-    right: -10px;
+    right: 0.2%;
     background-color: red;
-    color: white;
+    color: var(--primary-color);
     border-radius: 50%;
     padding: 5px 10px;
-    font-size: 12px;
+    font-size: 10px;
     display: none;
 }
   

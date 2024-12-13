@@ -80,14 +80,16 @@ function listarProductos() {
 
 // Mostrar el mensaje de confirmación (agregado a carrito)
 function mostrarMensajeConfirmacion(mensaje) {
-    const mensajeDiv = document.getElementById('mensaje-confirmacion');
-    mensajeDiv.textContent = mensaje;
-    mensajeDiv.style.display = 'block';
-    setTimeout(() => {
-        mensajeDiv.style.display = 'none';
-    }, 3000);
-}
+    const toastEl = document.getElementById('mensaje-confirmacion');
+    const toastBody = toastEl.querySelector('.toast-body');
+    toastBody.textContent = mensaje;
 
+    const toast = new bootstrap.Toast(toastEl);
+    toast.show();
+}
+  
+
+//Mensaje "redirigiendo..." tras clic en Pagar
 function mostrarMensajePago() {
     const mensajePagoDiv = document.getElementById('mensaje-pago');
     mensajePagoDiv.textContent = 'Redirigiendo a la página de pago...';
@@ -135,14 +137,6 @@ function agregarAlCarrito(id) {
             localStorage.setItem('carrito', JSON.stringify(carrito));
             mostrarMensajeConfirmacion(`${producto.Nombre} ha sido agregado al carrito.`);
             actualizarCantidadCarrito();
-            setTimeout(() => {
-                const currentPath = window.location.pathname;
-                if (currentPath.includes('index.html')) {
-                    window.location.href = './pages/carrito.html';
-                } else {
-                    window.location.href = './carrito.html';
-                }
-            }, 3000);
         }
     })
     .catch(error => console.error('Error al cargar el archivo JSON:', error));
@@ -208,6 +202,7 @@ document.addEventListener('DOMContentLoaded', () => {
         document.getElementById('vaciar-carrito').addEventListener('click', () => {
             localStorage.removeItem('carrito');
             listarCarrito();
+            actualizarCantidadCarrito();
         });
     }
 
@@ -316,7 +311,6 @@ function mostrarReseñasIndex(reseñas) {
     verMasLink.textContent = 'Ver más';
     reseñasSection.appendChild(verMasLink);
 }
-  
 
 //Mostrar reseñas en bio
 function mostrarReseñasBio(reseñas) {
@@ -338,7 +332,6 @@ function mostrarReseñasBio(reseñas) {
         reseñasSection.appendChild(reseñaDiv);
     });
 }
-  
 
 //Dibujar estrellas 
 function dibujarEstrellas(puntos) {
