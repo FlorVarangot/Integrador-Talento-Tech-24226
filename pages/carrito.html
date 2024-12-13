@@ -40,15 +40,16 @@
         </div>
         <div id="carrito"></div>
         <div id="mensaje-carrito-vacio" class="carrito-vacio">
-            <p>Aún no hay productos en el carrito.</p>
+            <p>Todavía no tenés productos en el carrito.</p>
             <a href="./productos.html">Ver productos</a>
         </div>
         <div id="detalle-carrito" class="detalle-carrito">
             <table>
                 <thead>
                     <tr>
-                        <th>Producto</th>
+                        <!-- <th>Imagen</th> -->
                         <th>Cantidad</th>
+                        <th>Producto</th>
                         <th>Precio Unitario</th>
                         <th>Total Parcial</th>
                         <th>Acciones</th>
@@ -56,13 +57,15 @@
                 </thead>
                 <tbody id="carrito-items"></tbody>
             </table>
-            <div class="total-final">
-                <button id="ver-mas-productos">Ver más productos</button>
+            <div class="texto-total">
+                <p>Total: $<span id="total-final"></span></p>
+            </div>
+            <div class="botones-carrito">
+                <button id="ver-mas-productos" title="Ir a Productos">Ver más productos</button>
                 <div class="acciones-carrito">
-                    <button id="vaciar-carrito">Vaciar Carrito</button>
-                    <button id="ir-a-pagar">Ir a Pagar</button>
+                    <button id="vaciar-carrito" title="Vaciar Carrito">Vaciar Carrito</button>
+                    <button id="ir-a-pagar" title="Ir a Pagar">Ir a Pagar</button>
                 </div>
-                <p>Total Final: $<span id="total-final"></span></p>
             </div>
             <div id="mensaje-pago" class="mensaje-pago"></div>
         </div>

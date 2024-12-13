@@ -134,7 +134,7 @@ function agregarAlCarrito(id) {
             carrito.push(nuevoProducto);
             }
             localStorage.setItem('carrito', JSON.stringify(carrito));
-            mostrarMensajeConfirmacion(`${producto.Nombre} ha sido agregado al carrito.`);
+            mostrarMensajeConfirmacion(`Se agregó 1 ${producto.Nombre} al carrito.`);
             actualizarCantidadCarrito();
         }
     })
@@ -168,20 +168,20 @@ function listarCarrito() {
         
         const productoRow = document.createElement('tr');
         productoRow.innerHTML = `
+        <td>
+          <button class="decrementar" data-id="${producto.id}">-</button>
+          ${producto.cantidad}
+          <button class="incrementar" data-id="${producto.id}">+</button>
+        </td>
           <td>${producto.nombre}</td>
-          <td>
-            <button class="decrementar" data-id="${producto.id}">-</button>
-            ${producto.cantidad}
-            <button class="incrementar" data-id="${producto.id}">+</button>
-          </td>
-          <td>$${producto.precio.toFixed(2)}</td>
-          <td>$${totalParcial.toFixed(2)}</td>
-          <td><button class="eliminar" data-id="${producto.id}"><i class="fas fa-trash-alt"></i></button></td>
+          <td>$${producto.precio.toFixed(4)}</td>
+          <td>$${totalParcial.toFixed(4)}</td>
+          <td><button class="eliminar" title="Quitar del carrito" data-id="${producto.id}"><i class="fas fa-trash-alt"></i></button></td>
         `;
         carritoItems.appendChild(productoRow);
       });
 
-      totalFinal.textContent = total.toFixed(2);
+      totalFinal.textContent = total.toFixed(4);
     }
     console.log('Productos en Carrito:', carrito);
 } 
