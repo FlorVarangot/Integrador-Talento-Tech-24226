@@ -80,14 +80,13 @@ function listarProductos() {
 
 // Mostrar el mensaje de confirmación (agregado a carrito)
 function mostrarMensajeConfirmacion(mensaje) {
-    const toastEl = document.getElementById('mensaje-confirmacion');
-    const toastBody = toastEl.querySelector('.toast-body');
-    toastBody.textContent = mensaje;
-
-    const toast = new bootstrap.Toast(toastEl);
-    toast.show();
+    const mensajeDiv = document.getElementById('mensaje-confirmacion');
+    mensajeDiv.textContent = mensaje;
+    mensajeDiv.style.display = 'block';
+    setTimeout(() => {
+        mensajeDiv.style.display = 'none';
+    }, 3000);
 }
-  
 
 //Mensaje "redirigiendo..." tras clic en Pagar
 function mostrarMensajePago() {

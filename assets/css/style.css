@@ -45,7 +45,6 @@ h3 {
     color: var(--primary-color);
     font-size: var(--font-size-medium);
     align-self: center;
-
 }
 
 a {
@@ -71,11 +70,7 @@ nav {
     position: fixed;
     top: 0;
     width: 100%;
-
     background-color: var(--background-alternativo);
-    /* background-color: antiquewhite; */
-    /* opacity: 0.8; */
-    
     z-index: 1000;
     display: flex;
     justify-content: space-between;
@@ -133,7 +128,7 @@ a:hover {
 }
 
 .inicio {
-    margin: 300px 150px;
+    margin: 335px 150px;
     flex-direction: column;
     text-align: center;
     align-items: center;
@@ -170,7 +165,6 @@ a:hover {
 .bio {
     display: flex;
     flex-wrap: wrap;
-    /* align-items: stretch; */
 }
 
 .productos {
@@ -277,7 +271,7 @@ a:hover {
 .reseñas-section-index {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: 1fr 1.5fr 1.5fr .5fr;
+    grid-template-rows: 1fr 1.5fr .5fr;
     gap: 10px;
     padding: 10px;
     justify-items: center;
@@ -311,39 +305,32 @@ a:hover {
 .mensaje-confirmacion {
     display: none;
     background-color: var(--third-color);
-    color: white;
+    color: var(--primary-color);
     padding: 15px;
-    margin-top: 100px;
-    position: relative;
+    position: fixed;
+    top: 12%;
+    right: 1%;
     z-index: 1000;
     border-radius: 5px;
 }
 
-.toast {
-    position: fixed;
-    top: 11%;
-    right: 2%;
-    z-index: 1050;
-}
-  
-
-.mensaje-carrito-vacio {
+.carrito-vacio {
     display: none;
     text-align: center;
     margin-top: 20px;
 }
 
-.mensaje-carrito-vacio p {
+.carrito-vacio p {
     font-size: 18px;
     color: #333;
 }
 
-.mensaje-carrito-vacio a {
+.carrito-vacio a {
     display: inline-block;
     margin-top: 10px;
     padding: 10px 20px;
-    background-color: #4caf50;
-    color: white;
+    background-color: var(--third-color);
+    color: var(--primary-color);
     text-decoration: none;
     border-radius: 5px;
 }
@@ -351,8 +338,8 @@ a:hover {
 .mensaje-pago {
     display: none;
     text-align: center;
-    background-color: #4caf50;
-    color: white;
+    background-color: var(--third-color);
+    color: var(--primary-color);
     padding: 10px;
     position: fixed;
     bottom: 10px;
@@ -361,7 +348,6 @@ a:hover {
     z-index: 1000;
     border-radius: 5px;
 }
-  
 
 .titulo{
     padding-top: 30px;
@@ -422,12 +408,13 @@ a:hover {
 
 .carrito-cantidad {
     position: absolute;
+    bottom: 20%;
     right: 0.2%;
     background-color: red;
     color: var(--primary-color);
     border-radius: 50%;
     padding: 5px 10px;
-    font-size: 10px;
+    font-size: 11px;
     display: none;
 }
   
