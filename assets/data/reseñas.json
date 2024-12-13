@@ -1,0 +1,62 @@
+[
+    {
+        "Id": "1",
+        "Autor": "Ludmila V",
+        "Reseña": "Hermoso taller, las clases me encantan y la profe Majo una genia",
+        "Puntos /5": "5"
+    },
+    {
+        "Id": "2",
+        "Autor": "Anónimo",
+        "Reseña": "Majo la mejor profe 💜…",
+        "Puntos /5": "5"
+    },
+    {
+        "Id": "3",
+        "Autor": "Santiago",
+        "Reseña": "Increible el taller, gracias !!",
+        "Puntos /5": "5"
+    },
+    {
+        "Id": "4",
+        "Autor": "Carolina",
+        "Reseña": "Lindo espacio y aprendí mucho!!",
+        "Puntos /5": "5"
+    },
+    {
+        "Id": "5",
+        "Autor": "Elena P",
+        "Reseña": "Bien.",
+        "Puntos /5": "4"
+    },
+    {
+        "Id": "6",
+        "Autor": "Pablo",
+        "Reseña": "Participé de un seminario y todo salió increible. Esperando volver a participar!!!",
+        "Puntos /5": "5"
+    },
+    {
+        "Id": "7",
+        "Autor": "Anónimo",
+        "Reseña": "Excelente",
+        "Puntos /5": "4,5"
+    },
+    {
+        "Id": "8",
+        "Autor": "Marcela",
+        "Reseña": "",
+        "Puntos /5": "5"
+    },
+    {
+        "Id": "9",
+        "Autor": "Susana",
+        "Reseña": "",
+        "Puntos /5": "5"
+    },
+    {
+        "Id": "10",
+        "Autor": "Cristina",
+        "Reseña": "",
+        "Puntos /5": "5"
+    }
+]

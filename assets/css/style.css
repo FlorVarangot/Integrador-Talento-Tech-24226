@@ -234,7 +234,8 @@ a:hover {
         1px 0 0 var(--third-color),
         -1px 0 0 var(--third-color),
         0 1px 0 var(--third-color),
-        0 -1px 0 var(--third-color);
+        0 -1px 0 var(--third-color)
+    ;
 }
 
 .tarjeta:hover {

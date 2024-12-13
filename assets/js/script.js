@@ -78,7 +78,7 @@ function listarProductos() {
     .catch(error => console.error('Error al cargar el archivo JSON:', error));
 }
 
-// Función para mostrar el mensaje de confirmación
+// Mostrar el mensaje de confirmación (agregado a carrito)
 function mostrarMensajeConfirmacion(mensaje) {
     const mensajeDiv = document.getElementById('mensaje-confirmacion');
     mensajeDiv.textContent = mensaje;
@@ -193,9 +193,10 @@ function listarCarrito() {
     console.log('Productos en Carrito:', carrito);
 } 
 
-// Manejo de eventos de clic en botones desde carrito (prod-vaciar-pagar)
+// Carga de datos + eventos de clic en botones desde carrito (prod-vaciar-pagar)
 document.addEventListener('DOMContentLoaded', () => {
     actualizarCantidadCarrito();
+    cargarReseñas();
 
     if (document.getElementById('ver-mas-productos')) {
         document.getElementById('ver-mas-productos').addEventListener('click', () => {
@@ -273,4 +274,86 @@ document.addEventListener('click', (event) => {
         }
     }
 });
+
+//Cargar reseñas
+function cargarReseñas() {
+    const rutaReseñas = window.location.pathname.includes('pages') ? '../assets/data/reseñas.json' : 'assets/data/reseñas.json';
+    fetch(rutaReseñas)
+    .then(response => response.json())
+    .then(data => {
+        mostrarReseñasIndex(data);
+        mostrarReseñasBio(data);
+    })
+    .catch(error => console.error('Error al cargar el archivo JSON:', error));
+}
+
+//Mostrar reseñas en index
+function mostrarReseñasIndex(reseñas) {
+    const reseñasSection = document.getElementById('reseñas-section-index');
+    if (!reseñasSection) return; // Si no está en index.html, salir de la función
+  
+    reseñasSection.innerHTML = '<h3 class="item-grid">Opiniones</h3>';
+  
+    const reseñasMostrar = reseñas.slice(0, 3);
+    reseñasMostrar.forEach(reseña => {
+      const reseñaDiv = document.createElement('article');
+      reseñaDiv.classList.add('tarjeta', 'tarjeta-reseña');
+      reseñaDiv.innerHTML = `
+        <div class="tarjeta-header">
+          <h2>${reseña.Autor}</h2>
+          <div class="estrellas">
+            ${dibujarEstrellas(reseña['Puntos /5'])}
+          </div>
+        </div>
+        <p>${reseña.Reseña}</p>
+      `;
+      reseñasSection.appendChild(reseñaDiv);
+    });
+  
+    const verMasLink = document.createElement('a');
+    verMasLink.href = './pages/bio.html';
+    verMasLink.classList.add('ver-mas', 'item-grid');
+    verMasLink.textContent = 'Ver más';
+    reseñasSection.appendChild(verMasLink);
+}
+  
+
+//Mostrar reseñas en bio
+function mostrarReseñasBio(reseñas) {
+    const reseñasSection = document.getElementById('reseñas-section-bio');
+    reseñasSection.innerHTML = '<h3 class="item-grid">Opiniones</h3>';
+
+    reseñas.forEach(reseña => {
+        const reseñaDiv = document.createElement('article');
+        reseñaDiv.classList.add('tarjeta', 'tarjeta-reseña');
+        reseñaDiv.innerHTML = `
+        <div class="tarjeta-header">
+            <h2>${reseña.Autor}</h2>
+            <div class="estrellas">
+            ${dibujarEstrellas(reseña['Puntos /5'])}
+            </div>
+        </div>
+        <p>${reseña.Reseña}</p>
+        `;
+        reseñasSection.appendChild(reseñaDiv);
+    });
+}
+  
+
+//Dibujar estrellas 
+function dibujarEstrellas(puntos) {
+    const estrellas = Math.round(parseFloat(puntos));
+    let estrellasHTML = '';
+    for (let i = 0; i < 5; i++) {
+        if (i < estrellas) {
+        estrellasHTML += '<i class="fas fa-star"></i>';
+        } else {
+        estrellasHTML += '<i class="far fa-star"></i>';
+        }
+    }
+    return estrellasHTML;
+}
+  
+  
+  
   
