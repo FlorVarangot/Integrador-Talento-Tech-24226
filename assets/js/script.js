@@ -183,7 +183,7 @@ function listarCarrito() {
           </td>
           <td>$${producto.precio.toFixed(2)}</td>
           <td>$${totalParcial.toFixed(2)}</td>
-          <td><button class="eliminar" data-id="${producto.id}">Eliminar</button></td>
+          <td><button class="eliminar" data-id="${producto.id}"><i class="fas fa-trash-alt"></i></button></td>
         `;
         carritoItems.appendChild(productoRow);
       });
@@ -238,7 +238,7 @@ document.addEventListener('click', (event) => {
     }
 });
 
-// Manejo de evento de clic para gestionar productos en carrito
+// Manejo de evento de clic para gestionar productos en carrito (+ - eliminar)
 document.addEventListener('click', (event) => {
     if (event.target.classList.contains('incrementar')) {
         const id = event.target.dataset.id;
@@ -247,6 +247,7 @@ document.addEventListener('click', (event) => {
             producto.cantidad += 1;
             localStorage.setItem('carrito', JSON.stringify(carrito));
             listarCarrito();
+            actualizarCantidadCarrito();
         }
     }
 
@@ -257,16 +258,18 @@ document.addEventListener('click', (event) => {
             producto.cantidad -= 1;
             localStorage.setItem('carrito', JSON.stringify(carrito));
             listarCarrito();
+            actualizarCantidadCarrito();
         }
     }
 
-    if (event.target.classList.contains('eliminar')) {
-        const id = event.target.dataset.id;
-        const index = carrito.findIndex(p => p.id == id);
+    if (event.target.closest('.eliminar')) { 
+        const id = event.target.closest('.eliminar').dataset.id; 
+        const index = carrito.findIndex(p => p.id == id); 
         if (index !== -1) {
             carrito.splice(index, 1);
             localStorage.setItem('carrito', JSON.stringify(carrito));
             listarCarrito();
+            actualizarCantidadCarrito();
         }
     }
 });
