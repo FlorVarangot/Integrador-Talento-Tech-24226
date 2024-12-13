@@ -12,8 +12,25 @@
     --font-size-mini: 0.875rem;
 }
 
-html{
-    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+html, body{
+    height: 1vh;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    background-color: var(--background-color);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: var(--primary-color);
+    font-size: var(--font-size-base);
+}
+
+body {
+    background-color: var(--secondary-color);
+    display: flex;
+    flex-direction: column;
+    margin-top: 70px;
+    height: 100vh;
 }
 
 * {
@@ -21,12 +38,6 @@ html{
     margin: 0;
 }
 
-body {
-    background-color: var(--secondary-color);
-    display: block;
-    margin-top: 70px;
-    height: 100vh;
-}
 
 h1 {
     font-size: var(--font-size-large);
@@ -59,13 +70,6 @@ a:hover {
     color: var(--third-color);
 }
 
-html {
-    background-color: var(--background-color);
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    color: var(--primary-color);
-    font-size: var(--font-size-base);
-}
-
 nav {
     position: fixed;
     top: 0;
@@ -96,10 +100,6 @@ nav ul {
 
 nav li {
     margin: 10 10px;
-}
-
-p{
-    text-align: justify;
 }
 
 /* estilo para el nav class menu */
@@ -280,7 +280,7 @@ a:hover {
 .ver-mas {
     display: flex;
     justify-content: center;
-    margin: 10px;
+    margin: 1% 1% 3% 1%;
     color:var(--third-color);
 }
 
@@ -302,27 +302,17 @@ a:hover {
     padding: 5px;
 }
 
-.mensaje-confirmacion {
-    display: none;
-    background-color: var(--third-color);
-    color: var(--primary-color);
-    padding: 15px;
-    position: fixed;
-    top: 12%;
-    right: 1%;
-    z-index: 1000;
-    border-radius: 5px;
-}
-
 .carrito-vacio {
-    display: none;
+    display: flex;
+    justify-content: center;
     text-align: center;
-    margin-top: 20px;
+    margin: 2%;
 }
 
 .carrito-vacio p {
-    font-size: 18px;
-    color: #333;
+    font-size: var(--font-size-small);
+    color: var(--third-color);
+    margin: 3% 3% 5%;
 }
 
 .carrito-vacio a {
@@ -335,15 +325,30 @@ a:hover {
     border-radius: 5px;
 }
 
-.mensaje-pago {
+
+
+.mensaje-confirmacion {
     display: none;
-    text-align: center;
     background-color: var(--third-color);
     color: var(--primary-color);
-    padding: 10px;
+    padding: 15px;
     position: fixed;
-    bottom: 10px;
-    left: 50%;
+    top: 12%;
+    right: 1%;
+    z-index: 1000;
+    border-radius: 5px;
+}
+
+.mensaje-pago {
+    display: none;
+    background-color: var(--primary-color);
+    color: var(--third-color);
+    width: 40rem;
+    text-align: center;
+    padding: 0.8%;
+    position: fixed;
+    bottom: 25%;
+    left:50%;
     transform: translateX(-50%);
     z-index: 1000;
     border-radius: 5px;
@@ -386,7 +391,7 @@ a:hover {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin: 5%;
+    margin: 1.5% 5%;
 }
 
 .texto-total { 
@@ -450,16 +455,16 @@ a:hover {
 .formulario {
     display: flex;
     flex-wrap: wrap;
-    gap: 20px;
+    gap: 2%;
     flex-direction: column;
     border: solid var(--primary-color);
     border-radius: 5px;
-    padding: 15px;
-    margin: 20px;
+    padding: 2%;
+    margin: 2% 2% 5%;
     background-color: var(--background-alternativo);
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     width: 80%;
-    max-width: 800px;
+    max-width: 80%;
 }
 
 .form-group {
@@ -569,11 +574,11 @@ button {
     text-align: center;
     display: flex;
     flex-direction: column;
-    height: 120px;
+    height: 20%;
     width: 100%;
     justify-content: center;
-    margin: 20px 0 0 0;
-}
+    margin-top: auto;
+} 
 
 .footer ul {
     list-style-type: none;
