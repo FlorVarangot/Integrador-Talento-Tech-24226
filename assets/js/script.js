@@ -139,7 +139,7 @@ function agregarAlCarrito(id) {
         }
     })
     .catch(error => console.error('Error al cargar el archivo JSON:', error));
-}  
+}
 
 // Función para listar productos en el carrito
 function listarCarrito() {
@@ -184,7 +184,7 @@ function listarCarrito() {
       totalFinal.textContent = total.toFixed(4);
     }
     console.log('Productos en Carrito:', carrito);
-} 
+}
 
 // Carga de datos + eventos de clic en botones desde carrito (prod-vaciar-pagar)
 document.addEventListener('DOMContentLoaded', () => {
@@ -345,7 +345,3 @@ function dibujarEstrellas(puntos) {
     }
     return estrellasHTML;
 }
-  
-  
-  
-  
