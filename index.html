@@ -21,18 +21,25 @@
 <body>
     <header>
         <nav class="menu">
-            <a href="./index.html">
-                <img src="./assets/img/LogoQueSea.png" alt="Logo" class="logo">
-            </a>
-            <ul>
-                <li><a href="./index.html">Inicio</a></li>
-                <li><a href="./pages/productos.html">Productos</a></li>
-                <li><a href="./pages/bio.html">Sobre mí</a></li>
-                <li><a href="./pages/contacto.html">Contacto</a></li>
-                <li><a href="/pages/carrito.html"><i class="fas fa-shopping-cart" title="Mi carrito"></i>
-                    <span id="carrito-cantidad" class="carrito-cantidad"></span></a>
-                </li>
-            </ul>
+            <div class="nav-top">
+                <img src="./assets/img/LogoQueSea.png" alt="Logo Que Sea" class="logo">
+                <div class="barra-buscar">
+                    <input type="text" title="¿Qué estás buscando?" placeholder="Buscar...">
+                </div>
+                <div class="nav-icons">
+                    <a href="/pages/login.html"><i class="fas fa-user" title="Iniciar sesión"></i> Ingresar</a>
+                    <a href="/pages/carrito.html"><i class="fas fa-shopping-cart" title="Mi carrito"></i> 
+                        Mi Carrito<span id="carrito-cantidad" class="carrito-cantidad"></span></a>
+                </div>
+            </div>
+            <div class="nav-bottom">
+                <ul>
+                    <li><a href="./index.html">Inicio</a></li>
+                    <li><a href="./pages/productos.html">Productos</a></li>
+                    <li><a href="./pages/bio.html">Sobre mí</a></li>
+                    <li><a href="./pages/contacto.html">Contacto</a></li>
+                </ul>
+            </div>
         </nav>
     </header>
     

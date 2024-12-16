@@ -188,8 +188,8 @@ function listarCarrito() {
 
 // Carga de datos + eventos de clic en botones desde carrito (prod-vaciar-pagar)
 document.addEventListener('DOMContentLoaded', () => {
-    actualizarCantidadCarrito();
     cargarReseñas();
+    actualizarCantidadCarrito();
 
     if (document.getElementById('ver-mas-productos')) {
         document.getElementById('ver-mas-productos').addEventListener('click', () => {
