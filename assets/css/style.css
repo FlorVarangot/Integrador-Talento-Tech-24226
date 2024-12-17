@@ -164,7 +164,7 @@ li {
 }
 
 .inicio {
-    margin: 335px 150px;
+    margin: 260px;
     flex-direction: column;
     text-align: center;
     align-items: center;
@@ -361,8 +361,6 @@ li {
     border-radius: 5px;
 }
 
-
-
 .mensaje-confirmacion {
     display: none;
     background-color: var(--third-color);
@@ -475,21 +473,6 @@ li {
     padding: 6%;
     margin: auto;
 }
-/* 
-.carrito-cantidad {
-    position: relative;
-    left: 90%;
-    background-color: red;
-    color: var(--primary-color);
-    border-radius: 40%;
-    padding: 0.5%;
-    font-size: 1em;
-    text-align: center;
-    width: 30%;
-    z-index: 1;
-    display: none;
-    transform: none;
-} */
 
 .carrito-cantidad {
     position: absolute;
@@ -634,7 +617,7 @@ button {
     justify-content: center;
     align-items: center;
     width: 100%;
-    padding-top: 1%;
+    padding-top: 2%;
 }
 
 .section-footer {
@@ -644,6 +627,7 @@ button {
     width: 33%;
     box-sizing: border-box;
     text-align: center;
+    padding-bottom: 1%;
 }
 
 .footer a {
@@ -700,6 +684,12 @@ button {
     width: 100%;
     margin-top: 0;
     padding-bottom: 1%;
+}
+
+.separador {
+    margin: auto;
+    color: var(--third-color);
+    width: 90%;
 }
 
 
