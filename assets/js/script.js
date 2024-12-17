@@ -13,12 +13,13 @@ function mostrarProductosDestacados() {
             <a href="./pages/detalle.html?id=${producto.Id}">
                 <article class="tarjeta">
                 <h2>${producto.Nombre}</h2>
-                <img src="${producto.Imagen}" alt="${producto.Nombre}">
+                <img src="${producto.Imagenes[0]}" alt="${producto.Nombre}">
                 <p>${producto.Precio}</p>
+                <span class="sin-stock" style="display: ${producto.Disponible ? 'none' : 'block'};">Sin Stock</span>
                 </article>
             </a>
             <div class="tarjeta-boton">
-                <button type="button" class="agregar" data-id="${producto.Id}">¡Lo quiero!</button>
+                <button type="button" class="agregar" data-id="${producto.Id}" ${producto.Disponible ? '' : 'disabled'}>¡Lo quiero!</button>
             </div>
             `;
             destacadosDiv.appendChild(productoDiv);
@@ -37,14 +38,27 @@ function verDetalleProducto() {
         const producto = data.find(p => p.Id === productId);
         if (producto) {
             document.getElementById('producto-nombre').textContent = producto.Nombre;
-            document.getElementById('producto-imagen').src = producto.Imagen;
+            const galeriaDiv = document.getElementById('producto-galeria');
+            galeriaDiv.innerHTML = ''; // Limpiar la galería antes de agregar nuevas imágenes
+            producto.Imagenes.forEach(imagen => {
+                const imgElement = document.createElement('img');
+                imgElement.src = imagen;
+                imgElement.alt = producto.Nombre;
+                galeriaDiv.appendChild(imgElement);
+            });
             document.getElementById('producto-descripcion').textContent = producto.Descripcion;
             document.getElementById('producto-precio').textContent = producto.Precio;
 
             const botonDiv = document.getElementById('boton-agregar-carrito');
             botonDiv.innerHTML = `
-            <button type="button" class="agregar" data-id="${producto.Id}">¡Lo quiero!</button>
+            <button type="button" class="agregar" data-id="${producto.Id}" ${producto.Disponible ? '' : 'disabled'}>¡Lo quiero!</button>
             `;
+
+            if (producto.Disponible === 0) {
+                document.getElementById('sin-stock-detalle').style.display = 'block';
+            } else {
+                document.getElementById('sin-stock-detalle').style.display = 'none';
+            }
         }
     })
     .catch(error => console.error('Error al cargar el archivo JSON:', error));
@@ -64,12 +78,13 @@ function listarProductos() {
             <a href="./detalle.html?id=${producto.Id}">
                 <article class="tarjeta">
                 <h2>${producto.Nombre}</h2>
-                <img src="${producto.Imagen}" alt="${producto.Nombre}">
+                <img src="${producto.Imagenes[0]}" alt="${producto.Nombre}">
                 <p>${producto.Precio}</p>
+                <span class="sin-stock" style="display: ${producto.Disponible ? 'none' : 'block'};">Sin Stock</span>
                 </article>
             </a>
             <div class="tarjeta-boton">
-                <button type="button" class="agregar" data-id="${producto.Id}">¡Lo quiero!</button>
+                <button type="button" class="agregar" data-id="${producto.Id}" ${producto.Disponible ? '' : 'disabled'}>¡Lo quiero!</button>
             </div>
             `;
             productosDiv.appendChild(productoDiv);

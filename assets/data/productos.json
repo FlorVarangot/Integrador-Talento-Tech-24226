@@ -4,76 +4,151 @@
         "Nombre": "Budinera Morella",
         "Descripcion": "Bandejita budinera 25x12cm esmaltada",
         "Precio": " $ 24.000,00 ",
-        "Imagen": "https://picsum.photos/300/200?random=1"
+        "Disponible": 1,
+        "Imagenes": [
+            "https://picsum.photos/300/200?random=1"
+        ]
     },
     {
         "Id": "2",
         "Nombre": "Cazuela Bigo",
         "Descripcion": "Cazuela con asas 12cm esmaltada",
         "Precio": " $ 18.000,00 ",
-        "Imagen": "https://picsum.photos/300/200?random=2"
+        "Disponible": 1,
+        "Imagenes": [
+            "https://picsum.photos/300/200?random=2"
+        ]
     },
     {
         "Id": "3",
-        "Nombre": "Ensaladera L",
-        "Descripcion": "Bowl 25cm esmaltado",
-        "Precio": " $ 28.000,00 ",
-        "Imagen": "https://picsum.photos/300/200?random=3"
+        "Nombre": "Ensaladera XL",
+        "Descripcion": "Bowl 30cm esmaltado",
+        "Precio": " $ 32.000,00 ",
+        "Disponible": 0,
+        "Imagenes": [
+            "https://picsum.photos/300/200?random=3"
+        ]
     },
     {
         "Id": "4",
-        "Nombre": "Ensaladera M",
-        "Descripcion": "Bowl 20cm esmaltado",
-        "Precio": " $ 25.000,00 ",
-        "Imagen": "https://picsum.photos/300/200?random=4"
+        "Nombre": "Ensaladera L",
+        "Descripcion": "Bowl 25cm esmaltado",
+        "Precio": " $ 28.000,00 ",
+        "Disponible": 1,
+        "Imagenes": [
+            "https://picsum.photos/300/200?random=4"
+        ]
     },
     {
         "Id": "5",
-        "Nombre": "Ensaladera S",
-        "Descripcion": "Bowl 16cm esmaltado",
-        "Precio": " $ 20.000,00 ",
-        "Imagen": "https://picsum.photos/300/200?random=5"
+        "Nombre": "Ensaladera M",
+        "Descripcion": "Bowl 20cm esmaltado",
+        "Precio": " $ 25.000,00 ",
+        "Disponible": 1,
+        "Imagenes": [
+            "https://picsum.photos/300/200?random=5"
+        ]
     },
     {
         "Id": "6",
-        "Nombre": "Ensaladera XL",
-        "Descripcion": "Bowl 30cm esmaltado",
-        "Precio": " $ 30.000,00 ",
-        "Imagen": "https://picsum.photos/300/200?random=6"
+        "Nombre": "Ensaladera S",
+        "Descripcion": "Bowl 16cm esmaltado",
+        "Precio": " $ 20.000,00 ",
+        "Disponible": 1,
+        "Imagenes": [
+            "https://picsum.photos/300/200?random=6"
+        ]
     },
     {
         "Id": "7",
-        "Nombre": "Jarra Mora",
-        "Descripcion": "Jarra 1.5L esmaltada",
-        "Precio": " $ 45.000,00 ",
-        "Imagen": "https://picsum.photos/300/200?random=7"
+        "Nombre": "Aros Amapola",
+        "Descripcion": "Par de aros en gres, esmaltados",
+        "Precio": " $ 15.000,00 ",
+        "Disponible": 1,
+        "Imagenes": [
+            "https://picsum.photos/300/200?random=7"
+        ]
     },
     {
         "Id": "8",
-        "Nombre": "Mate bolita",
-        "Descripcion": "Mate bolita",
-        "Precio": " $ 18.000,00 ",
-        "Imagen": "https://picsum.photos/300/200?random=8"
+        "Nombre": "Jarra Mora",
+        "Descripcion": "Jarra 1.5L esmaltada",
+        "Precio": " $ 45.000,00 ",
+        "Imagenes": [
+            "https://picsum.photos/300/200?random=8"
+        ]
     },
     {
         "Id": "9",
-        "Nombre": "Platito Peky",
-        "Descripcion": "Platito con palabras cruzadas 12x12 esmaltado",
-        "Precio": " $ 15.000,00 ",
-        "Imagen": "https://picsum.photos/300/200?random=9"
+        "Nombre": "Mate bolita",
+        "Descripcion": "Mate bolita",
+        "Precio": " $ 18.000,00 ",
+        "Disponible": 1,
+        "Imagenes": [
+            "https://picsum.photos/300/200?random=9"
+        ]
     },
     {
         "Id": "10",
-        "Nombre": "Taza Martita",
-        "Descripcion": "Taza tipo jarrito 7,5 cm de alto - 8 cm de ancho (ideal para mate).",
-        "Precio": " $ 16.000,00 ",
-        "Imagen": "https://picsum.photos/300/200?random=10"
+        "Nombre": "Platito Peky",
+        "Descripcion": "Platito con palabras cruzadas 12x12 esmaltado",
+        "Precio": " $ 15.000,00 ",
+        "Disponible": 1,
+        "Imagenes": [
+            "https://picsum.photos/300/200?random=10"
+        ]
     },
     {
         "Id": "11",
+        "Nombre": "Jarro Martita",
+        "Descripcion": "Taza tipo jarrito 7,5 cm de alto - 8 cm de ancho (ideal para mate).",
+        "Precio": " $ 16.000,00 ",
+        "Disponible": 1,
+        "Imagenes": [
+            "https://picsum.photos/300/200?random=11"
+        ]
+    },
+    {
+        "Id": "12",
         "Nombre": "Tazón Barto",
         "Descripcion": "Tazón esmaltado",
         "Precio": " $ 22.000,00",
-        "Imagen": "https://picsum.photos/300/200?random=11"
+        "Disponible": 0,
+        "Imagenes": [
+            "https://picsum.photos/300/200?random=12"
+        ]
+    },
+    {
+        "Id": "13",
+        "Nombre": "Kit QueSea en casa",
+        "Descripcion": "Incluye: 2 kilos de arcilla, engobes (2 colores a elección), barbotina (para ensamblar), 1 lanceta, 1 punzón, 2 pinceles, 1 esponja, dispositivo de tanza para corte, un cuadernillo con imágenes de referencia, primera horneada de las piezas. Además podrás escribirnos para consultarnos si tenes dudas durante el proceso",
+        "Precio": " $ 25.000,00",
+        "Disponible": 1,
+        "Imagenes": [
+            "https://picsum.photos/300/200?random=13"
+        ]
+    },
+    {
+        "Id": "14",
+        "Nombre": "Evento QueSea itinerante",
+        "Descripcion": "Te ofrecemos la experiencia de construir una pieza en arcilla con los invitados que vos quieras! Nos adaptamos según tus deseos y necesidades. Podemos recibirte en nuestro taller o a domicilio. Nos ocupamos de la organización, planificación, materiales y horneadas.",
+        "Precio": "Precio a convenir",
+        "Disponible": 1,
+        "Imagenes": [
+            "https://picsum.photos/300/200?random=14"
+        ]
+    },
+    {
+        "Id": "15",
+        "Nombre": "Voucher regalo",
+        "Descripcion": "Incluye: 2 kilos de arcilla, engobes (2 colores a elección), barbotina (para ensamblar), 1 lanceta, 1 punzón, 2 pinceles, 1 esponja, dispositivo de tanza para corte, un cuadernillo con imágenes de referencia, primera horneada de las piezas. Además podrás escribirnos para consultarnos si tenes dudas durante el proceso",
+        "Precio": "Precio a convernir",
+        "Disponible": 1,
+        "Imagenes": [
+            "https://picsum.photos/300/200?random=15",
+            "https://picsum.photos/300/200?random=16",
+            "https://picsum.photos/300/200?random=17",
+            "https://picsum.photos/300/200?random=18"
+        ]
     }
 ]
