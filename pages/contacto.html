@@ -45,24 +45,28 @@
         <section class="contacto">
             <form class="formulario" action="https://formsubmit.co/florencia.rvarangot@gmail.com" method="post">
                 <div class="form-group">
-                <label for="nombre">Nombre:</label>
-                <input type="text" name="nombre" id="nombre" required>
-            </div>
-            <div class="form-group">
-                <label for="mail">Mail:</label>
-                <input type="email" name="mail" id="mail" required="true">
-            </div>
-            <div class="form-group">
-                <label for="mensaje">Mensaje:</label>
-                <textarea name="mensaje" id="mensaje" required></textarea>
-            </div>
-            <div class="form-group checkbox-group">
-                <input type="checkbox" name="suscripcion" id="suscripcion" value="quiero">
-                <label for="suscripcion">Quiero recibir información en mi correo.</label>
-            </div>
-            <div class="form-group">
-                <button type="submit" id="button">Enviar</button>
-            </div>
+                    <label for="nombre">Nombre:</label>
+                    <input type="text" name="nombre" id="nombre" required>
+                    <span class="error-message" id="error-nombre"></span>
+                </div>                
+                <div class="form-group">
+                    <label for="mail">Mail:</label>
+                    <input type="email" name="mail" id="mail" required>
+                    <span class="error-message" id="error-mail"></span>
+                </div>
+                <div class="form-group">
+                    <label for="mensaje">Mensaje:</label>
+                    <textarea name="mensaje" id="mensaje" required></textarea>
+                    <span class="error-message" id="error-mensaje"></span>
+                </div>
+                <div class="form-group checkbox-group">
+                    <input type="checkbox" name="suscripcion" id="suscripcion" value="quiero">
+                    <label for="suscripcion">Quiero recibir información en mi correo.</label>
+                </div>
+                <div class="form-group">
+                    <button type="submit" id="button">Enviar</button>
+                </div>
+                <div id="mensaje-envio" class="mensaje-envio"></div>
             </form>
         </section>
     </main>
@@ -92,6 +96,7 @@
         </div>
     </footer>
     <script src="../assets/js/script.js"></script>
+    <script src="../assets/js/contacto.js"></script>
 </body>
 
 </html>

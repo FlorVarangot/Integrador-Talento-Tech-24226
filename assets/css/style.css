@@ -365,7 +365,7 @@ li {
     display: none;
     background-color: var(--third-color);
     color: var(--primary-color);
-    padding: 15px;
+    padding: 0.8%;
     position: fixed;
     top: 12%;
     right: 1%;
@@ -386,6 +386,24 @@ li {
     transform: translateX(-50%);
     z-index: 1000;
     border-radius: 5px;
+}
+
+.error-message {
+    color: red;
+    font-size: 0.9em;
+}
+
+.error {
+    border: 2px solid red;
+}
+
+.mensaje-envio {
+    color: var(--third-color);
+    font-size: 1em;
+    padding: 0.5%;
+    border-radius: 0.5em;
+    z-index: 1000;
+    display: none;
 }
 
 .titulo{
@@ -500,8 +518,8 @@ li {
     margin: 2% 2% 5%;
     background-color: var(--background-alternativo);
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    width: 80%;
-    max-width: 80%;
+    width: 75%;
+    max-width: 75%;
 }
 
 .form-group {

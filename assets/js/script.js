@@ -284,7 +284,7 @@ function cargarReseñas() {
 //Mostrar reseñas en index
 function mostrarReseñasIndex(reseñas) {
     const reseñasSection = document.getElementById('reseñas-section-index');
-    if (!reseñasSection) return; // Si no está en index.html, salir de la función
+    if (!reseñasSection) return;
   
     reseñasSection.innerHTML = '<h3 class="item-grid">Opiniones</h3>';
   
@@ -314,6 +314,8 @@ function mostrarReseñasIndex(reseñas) {
 //Mostrar reseñas en bio
 function mostrarReseñasBio(reseñas) {
     const reseñasSection = document.getElementById('reseñas-section-bio');
+    if (!reseñasSection) return;
+    
     reseñasSection.innerHTML = '<h3 class="item-grid">Opiniones</h3>';
 
     reseñas.forEach(reseña => {
