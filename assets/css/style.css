@@ -4,13 +4,12 @@
     --third-color:#2f4f4f;
     --background-alternativo:#faebd7cc;
     --border-radius: 0.25rem;
-    --box-shadow: 0 4px 8px #0000001a;
     --transition-duration: 0.3s ease;
     --font-size-large: 4rem;
     --font-size-medium: 2.5rem;
     --font-size-small: 1rem;
     --font-size-icono: 1.5rem;
-    --font-size-mini: 0.875rem;
+    --font-size-mini: 0.9rem;
 }
 
 html, body{
@@ -28,8 +27,6 @@ html {
 
 body {
     background-color: var(--secondary-color);
-    display: flex;
-    flex-direction: column;
     margin-top: 70px;
     height: 100vh;
 }
@@ -67,13 +64,62 @@ a {
     transition: color ;
 }
 
-a:hover {
-    color: var(--third-color);
-}
-
 li {
     display: inline;
     list-style: none;
+}
+
+label {
+    margin: 5px;
+    font-weight: bold;
+    color: var(--third-color);
+}
+
+
+input[type="text"],
+input[type="email"],
+input[type="password"],
+textarea {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 100%;
+    transition: border-color 0.3s;
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="password"]:focus,
+textarea:focus {
+    border-color: var(--secondary-color);
+    outline: none;
+}
+
+textarea {
+    resize: vertical;
+    min-height: 100px;
+}
+
+input[type="checkbox"] {
+    margin-right: 10px;
+}
+
+button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: var(--third-color);
+    color: var(--primary-color);
+    font-size: var(--font-size-small);
+    cursor: pointer;
+    transition: transform;
+}
+
+button[disabled] {
+    background-color: grey;
+    color: var(--primary-color);
+    cursor: not-allowed;
+    opacity: 0.6;
 }
 
 .menu {
@@ -164,7 +210,8 @@ li {
 }
 
 .inicio {
-    margin: 260px;
+    margin: 35vh;
+    display: flex;
     flex-direction: column;
     text-align: center;
     align-items: center;
@@ -198,6 +245,7 @@ li {
 
 .productos,
 .contacto,
+.login,
 .bio {
     display: flex;
     flex-wrap: wrap;
@@ -209,26 +257,32 @@ li {
     align-content: center;
 }
 
-.contacto {
+.contacto,
+.login {
     justify-content: center;
 }
 
+.tarjeta-link {
+    border: 1px solid var(--primary-color);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1), 0 0 10px var(--third-color);
+    width: 300px;
+    padding: 1%;
+    overflow: hidden;
+}
+
+
 .tarjeta {
     position: relative;
-    border: 1px solid var(--primary-color);
     border-radius: 0.25rem;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    overflow: hidden;
-    width: 300px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    margin: 5px;
 }
 
 .tarjeta-boton{
-    align-self: center;
-    margin: 10px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
 }
 
 .tarjeta img {
@@ -269,7 +323,8 @@ li {
     ;
 }
 
-.tarjeta:hover {
+.tarjeta-link:hover,
+.tarjeta-reseña:hover {
     transform: scale(1.05);
     transition: transform 0.3s ease;
 }
@@ -309,8 +364,16 @@ li {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: 1fr 1.5fr .5fr;
-    gap: 10px;
-    padding: 10px;
+    gap: 1em;
+    padding: 1%;
+    justify-items: center;
+}
+
+.reseñas-section {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: 1fr 1.5fr 1.5fr 1.5fr 1.5fr;
+    padding: 2%;
     justify-items: center;
 }
 
@@ -318,21 +381,29 @@ li {
     display: flex;
     justify-content: center;
     margin: 1% 1% 3% 1%;
-    color:var(--third-color);
+    width: 100%;
+    gap: 5em;
 }
 
 .item-grid{
     grid-column: 1 / span 3;
-    /* background-color: #fff; */
     text-align: center;
 }
 
-.reseñas-section {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: auto;
-    padding: 10px;
-    justify-items: center;
+.reseñas-section-index a,
+.ver-mas a{
+    color:var(--third-color);
+    padding: 1%;
+}
+
+.reseñas-section-index a:hover,
+.ver-mas a:hover{
+    color:var(--primary-color);
+    transform: scale(1.2);
+}
+
+.link:hover{
+    color:var(--third-color);
 }
 
 .estrellas{
@@ -387,7 +458,6 @@ li {
   }
   
   .detalle-producto .tarjeta-boton {
-    grid-column: 1 / -1;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -416,6 +486,12 @@ li {
     color: var(--primary-color);
     text-decoration: none;
     border-radius: 5px;
+}
+
+.mensaje-info {
+    font-size: var(--font-size-small);
+    color: var(--third-color);
+    margin: 4%;
 }
 
 .mensaje-confirmacion {
@@ -447,7 +523,8 @@ li {
 
 .error-message {
     color: red;
-    font-size: 0.9em;
+    font-size: var(--font-size-mini);
+    margin-top: 1%;
 }
 
 .error {
@@ -504,6 +581,7 @@ li {
     justify-content: center;
     padding: 15px 5px 5px 5px;
     text-align: left;
+    margin-bottom: 1%;
 }
 
 .detalle-carrito {
@@ -595,7 +673,6 @@ li {
     transform: none;
 }
 
-
 .formulario {
     display: flex;
     flex-wrap: wrap;
@@ -604,7 +681,7 @@ li {
     border: solid var(--primary-color);
     border-radius: 5px;
     padding: 2%;
-    margin: 2% 2% 5%;
+    margin: 2%;
     background-color: var(--background-alternativo);
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     width: 75%;
@@ -617,59 +694,14 @@ li {
     margin-bottom: 15px;
 }
 
-label {
-    margin: 5px;
-    font-weight: bold;
+.login-message {
+    margin-top: 10px;
+    font-size: 1em;
     color: var(--third-color);
 }
 
-input[type="text"],
-input[type="email"],
-textarea {
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    font-size: 16px;
-    width: 100%;
-    transition: border-color 0.3s;
-}
-
-input[type="text"]:focus,
-input[type="email"]:focus,
-textarea:focus {
-    border-color: #8fbc8f;
-    outline: none;
-}
-
-textarea {
-    resize: vertical;
-    min-height: 100px;
-}
-
-input[type="checkbox"] {
-    margin-right: 10px;
-}
-
-button {
-    padding: 10px 20px;
-    border: none;
-    border-radius: 5px;
-    background-color: var(--third-color);
-    color: var(--primary-color);
-    font-size: var(--font-size-small);
-    cursor: pointer;
-    transition: transform;
-}
-
-button[disabled] {
-    background-color: grey;
-    color: var(--primary-color);
-    cursor: not-allowed;
-    opacity: 0.6;
-}
-
-
-.contacto button:hover {
+.contacto button:hover,
+.login button:hover {
     transform: scale(1.02);
     background-color: var(--secondary-color);
 }
@@ -692,9 +724,9 @@ button[disabled] {
     margin:auto;
 }
 
-.biografia img,
-.taller img{
-    max-width: 100%;
+.taller img,
+.biografia img{
+    max-width: 16%;
     border-radius:5px;
     margin: 5px;
 }

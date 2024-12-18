@@ -1,4 +1,4 @@
-// Función para mostrar productos destacados en Index
+//Función para mostrar productos destacados en Index
 function mostrarProductosDestacados() {
     fetch('assets/data/productos.json')
     .then(response => response.json())
@@ -10,16 +10,19 @@ function mostrarProductosDestacados() {
             const productoDiv = document.createElement('div');
             productoDiv.classList.add('tarjeta-link');
             productoDiv.innerHTML = `
-            <a href="./pages/detalle.html?id=${producto.Id}">
-                <article class="tarjeta">
-                <h2>${producto.Nombre}</h2>
-                <img src="${producto.Imagenes[0]}" alt="${producto.Nombre}">
-                <p>${producto.Precio}</p>
-                <span class="sin-stock" style="display: ${producto.Disponible ? 'none' : 'block'};">Sin Stock</span>
-                </article>
-            </a>
-            <div class="tarjeta-boton">
-                <button type="button" class="agregar" data-id="${producto.Id}" ${producto.Disponible ? '' : 'disabled'}>¡Lo quiero!</button>
+            <div class="tarjeta">
+                <a href="./pages/detalle.html?id=${producto.Id}" title="${producto.Nombre}">
+                    <article class="tarjeta">
+                    <h2>${producto.Nombre}</h2>
+                    <img src="${producto.Imagenes[0]}" alt="${producto.Nombre}" title="${producto.Nombre}">
+                    <p>${producto.Precio}</p>
+                    <span class="sin-stock" style="display: ${producto.Disponible ? 'none' : 'block'};">Sin Stock</span>
+                    </article>
+                </a>
+                <div class="tarjeta-boton">
+                    <a href="./pages/detalle.html?id=${producto.Id}" class="link">Ver más</a>
+                    <button type="button" class="agregar" data-id="${producto.Id}" ${producto.Disponible ? '' : 'disabled'}>¡Lo quiero!</button>
+                </div>
             </div>
             `;
             destacadosDiv.appendChild(productoDiv);
@@ -28,7 +31,7 @@ function mostrarProductosDestacados() {
     .catch(error => console.error('Error al cargar el archivo JSON:', error));
 }
 
-// Función para ver detalles del producto
+//Función para ver detalles del producto
 function verDetalleProducto() {
     const urlParams = new URLSearchParams(window.location.search);
     const productId = urlParams.get('id');
@@ -39,7 +42,7 @@ function verDetalleProducto() {
         if (producto) {
             document.getElementById('producto-nombre').textContent = producto.Nombre;
             const galeriaDiv = document.getElementById('producto-galeria');
-            galeriaDiv.innerHTML = ''; // Limpiar la galería antes de agregar nuevas imágenes
+            galeriaDiv.innerHTML = '';
             producto.Imagenes.forEach(imagen => {
                 const imgElement = document.createElement('img');
                 imgElement.src = imagen;
@@ -64,7 +67,7 @@ function verDetalleProducto() {
     .catch(error => console.error('Error al cargar el archivo JSON:', error));
 }
 
-// Función para listar todos los productos en Productos
+//Función para listar todos los productos en Productos
 function listarProductos() {
     fetch('../assets/data/productos.json')
     .then(response => response.json())
@@ -75,16 +78,19 @@ function listarProductos() {
             const productoDiv = document.createElement('div');
             productoDiv.classList.add('tarjeta-link');
             productoDiv.innerHTML = `
-            <a href="./detalle.html?id=${producto.Id}">
-                <article class="tarjeta">
-                <h2>${producto.Nombre}</h2>
-                <img src="${producto.Imagenes[0]}" alt="${producto.Nombre}">
-                <p>${producto.Precio}</p>
-                <span class="sin-stock" style="display: ${producto.Disponible ? 'none' : 'block'};">Sin Stock</span>
-                </article>
-            </a>
-            <div class="tarjeta-boton">
-                <button type="button" class="agregar" data-id="${producto.Id}" ${producto.Disponible ? '' : 'disabled'}>¡Lo quiero!</button>
+            <div class="tarjeta">
+                <a href="./detalle.html?id=${producto.Id}" title="${producto.Nombre}">
+                    <article class="tarjeta">
+                    <h2>${producto.Nombre}</h2>
+                    <img src="${producto.Imagenes[0]}" alt="${producto.Nombre}" >
+                    <p>${producto.Precio}</p>
+                    <span class="sin-stock" style="display: ${producto.Disponible ? 'none' : 'block'};">Sin Stock</span>
+                    </article>
+                </a>
+                <div class="tarjeta-boton">
+                    <a href="./pages/detalle.html?id=${producto.Id}" class="link">Ver más</a>
+                    <button type="button" class="agregar" data-id="${producto.Id}" ${producto.Disponible ? '' : 'disabled'}>¡Lo quiero!</button>
+                </div>
             </div>
             `;
             productosDiv.appendChild(productoDiv);
@@ -93,7 +99,62 @@ function listarProductos() {
     .catch(error => console.error('Error al cargar el archivo JSON:', error));
 }
 
-// Mostrar el mensaje de confirmación (agregado a carrito)
+//Función para la barra de búsqeda - filtrado en nav de Productos html
+document.addEventListener('DOMContentLoaded', function() {
+    const searchInput = document.getElementById('search-input');
+    const productosDiv = document.getElementById('productos');
+
+    if (searchInput) {
+        if (!window.location.pathname.includes('productos.html')) {
+            searchInput.disabled = true;
+            searchInput.style.cursor = 'not-allowed';
+            searchInput.title = "No se puede buscar";
+        }else{
+            searchInput.addEventListener('input', function() {
+                const searchTerm = this.value.toLowerCase();
+                const basePath = window.location.pathname.includes('pages') ? '../assets/data/productos.json' : 'assets/data/productos.json';
+                fetch(basePath)
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error('Network response was not ok');
+                    }
+                    return response.json();
+                })
+                .then(data => {
+                    productosDiv.innerHTML = '';
+                    const productosFiltrados = data.filter(producto => {
+                        return producto.Nombre.toLowerCase().includes(searchTerm) ||
+                            producto.Descripcion.toLowerCase().includes(searchTerm);
+                    });
+
+                    productosFiltrados.forEach(producto => {
+                        const productoDiv = document.createElement('div');
+                        productoDiv.classList.add('tarjeta-link');
+                        productoDiv.innerHTML = `
+                        <a href="./detalle.html?id=${producto.Id}">
+                            <article class="tarjeta">
+                            <h2>${producto.Nombre}</h2>
+                            <img src="${producto.Imagenes[0]}" alt="${producto.Nombre}" title="${producto.Nombre}">
+                            <p>${producto.Precio}</p>
+                            <span class="sin-stock" style="display: ${producto.Disponible ? 'none' : 'block'};">Sin Stock</span>
+                            </article>
+                        </a>
+                        <div class="tarjeta-boton">
+                            <button type="button" class="agregar" data-id="${producto.Id}" ${producto.Disponible ? '' : 'disabled'}>¡Lo quiero!</button>
+                        </div>
+                        `;
+                        productosDiv.appendChild(productoDiv);
+                    });
+                })
+                .catch(error => console.error('Error al cargar el archivo JSON:', error));
+            });
+        }
+    } else {
+        console.error('Elemento con ID "search-input" o "productos" no encontrado.');
+    }
+});
+
+//Mostrar el mensaje de confirmación (agregado a carrito)
 function mostrarMensajeConfirmacion(mensaje) {
     const mensajeDiv = document.getElementById('mensaje-confirmacion');
     mensajeDiv.textContent = mensaje;
@@ -114,7 +175,7 @@ function mostrarMensajePago() {
     }, 3000);
 }
 
-// función para actualizar etiqueta de cantidades en carrito
+//Función para actualizar etiqueta de cantidades en carrito
 function actualizarCantidadCarrito() {
     const carrito = JSON.parse(localStorage.getItem('carrito')) || [];
     const carritoCantidad = carrito.reduce((total, producto) => total + producto.cantidad, 0);
@@ -128,7 +189,7 @@ function actualizarCantidadCarrito() {
     }
 }
 
-// Función para agregar al carrito
+//Función para agregar al carrito
 const carrito = JSON.parse(localStorage.getItem('carrito')) || [];
 function agregarAlCarrito(id) {
     fetch('../assets/data/productos.json')
@@ -156,11 +217,12 @@ function agregarAlCarrito(id) {
     .catch(error => console.error('Error al cargar el archivo JSON:', error));
 }
 
-// Función para listar productos en el carrito
+//Función para listar productos en el carrito
 function listarCarrito() {
     const carrito = JSON.parse(localStorage.getItem('carrito')) || [];
     const carritoDiv = document.getElementById('carrito');
     const mensajeCarritoVacio = document.getElementById('mensaje-carrito-vacio');
+    const mensajeInfo = document.getElementById('mensaje-info');
     const detalleCarrito = document.getElementById('detalle-carrito');
     const carritoItems = document.getElementById('carrito-items');
     const totalFinal = document.getElementById('total-final');
@@ -171,9 +233,11 @@ function listarCarrito() {
     if (carrito.length === 0) {
       mensajeCarritoVacio.style.display = 'block';
       detalleCarrito.style.display = 'none';
+      mensajeInfo.style.display = 'none';
     } else {
       mensajeCarritoVacio.style.display = 'none';
       detalleCarrito.style.display = 'block';
+      mensajeInfo.style.display = 'block';
       
       let total = 0;
       
@@ -201,7 +265,7 @@ function listarCarrito() {
     console.log('Productos en Carrito:', carrito);
 }
 
-// Carga de datos + eventos de clic en botones desde carrito (prod-vaciar-pagar)
+//Carga de datos + eventos de clic en botones desde carrito (prod-vaciar-pagar)
 document.addEventListener('DOMContentLoaded', () => {
     cargarReseñas();
     actualizarCantidadCarrito();
@@ -240,7 +304,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 });
 
-// Manejo de eventos de clic para agregar al carrito
+//Manejo de eventos de clic para agregar al carrito
 document.addEventListener('click', (event) => {
     if (event.target.classList.contains('agregar')) {
         const id = event.target.dataset.id;
@@ -248,7 +312,7 @@ document.addEventListener('click', (event) => {
     }
 });
 
-// Manejo de evento de clic para gestionar productos en carrito (+ - eliminar)
+//Manejo de evento de clic para gestionar productos en carrito (+ - eliminar)
 document.addEventListener('click', (event) => {
     if (event.target.classList.contains('incrementar')) {
         const id = event.target.dataset.id;
@@ -322,20 +386,19 @@ function mostrarReseñasIndex(reseñas) {
     const verMasLink = document.createElement('a');
     verMasLink.href = './pages/bio.html';
     verMasLink.classList.add('ver-mas', 'item-grid');
-    verMasLink.textContent = 'Ver más';
+    verMasLink.textContent = 'Ver más opiniones';
     reseñasSection.appendChild(verMasLink);
 }
 
 //Mostrar reseñas en bio
 function mostrarReseñasBio(reseñas) {
     const reseñasSection = document.getElementById('reseñas-section-bio');
-    if (!reseñasSection) return;
-    
-    reseñasSection.innerHTML = '<h3 class="item-grid">Opiniones</h3>';
-
+    if (!reseñasSection) return; 
+    reseñasSection.innerHTML = '<h3 class="subtitulo item-grid">Opiniones</h3>';
     reseñas.forEach(reseña => {
         const reseñaDiv = document.createElement('article');
         reseñaDiv.classList.add('tarjeta', 'tarjeta-reseña');
+        reseñaDiv.title = reseña.Autor;
         reseñaDiv.innerHTML = `
         <div class="tarjeta-header">
             <h2>${reseña.Autor}</h2>

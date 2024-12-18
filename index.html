@@ -19,8 +19,9 @@
         <nav class="menu">
             <div class="nav-top">
                 <img src="./assets/img/LogoQueSea.png" alt="Logo Que Sea" class="logo">
-                <div class="barra-buscar">
+                <div class="barra-buscar" id="barra-buscar">
                     <input id="search-input" type="text" title="¿Qué estás buscando?" placeholder="Buscar...">
+                    <div id="resultados-busqueda" class="resultados-busqueda"></div>
                 </div>
                 <div class="nav-icons">
                     <a href="/pages/login.html"><i class="fas fa-user" title="Iniciar sesión"></i> Ingresar</a>
@@ -43,7 +44,9 @@
         <section class="inicio">
           <h1>¡HOLA!</h1>
           <h2>Qué bueno tenerte de vuelta</h2>
-          <a href="./pages/productos.html" class="ver-mas">Descubrir productos</a>            
+          <div class="ver-mas">
+              <a href="./pages/productos.html">Descubrir productos</a>            
+          </div>
         </section>
         <section class="destacados-section">    
             <div class="subtitulo">
@@ -54,10 +57,7 @@
                 <a href="./pages/productos.html">Ver todos</a>
             </div>
         </section>
-        <section class="reseñas-section-index" id="reseñas-section-index">
-            <h3 class="item-grid">Opiniones</h3>
-            <a href="./pages/bio.html" class="ver-mas item-grid">Ver más</a>
-        </section>
+        <section class="reseñas-section-index" id="reseñas-section-index"></section>
     </main>
     <footer class="footer">
         <div class="container-footer">

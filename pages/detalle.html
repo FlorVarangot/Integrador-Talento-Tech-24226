@@ -19,8 +19,9 @@
         <nav class="menu">
             <div class="nav-top">
                 <img src="/assets/img/LogoQueSea.png" alt="Logo Que Sea" class="logo">
-                <div class="barra-buscar">
-                    <input type="text" placeholder="Buscar...">
+                <div class="barra-buscar" id="barra-buscar">
+                    <input id="search-input" type="text" title="¿Qué estás buscando?" placeholder="Buscar...">
+                    <div id="resultados-busqueda" class="resultados-busqueda"></div>
                 </div>
                 <div class="nav-icons">
                     <a href="/pages/login.html"><i class="fas fa-user" title="Iniciar sesión"></i> Ingresar</a>
@@ -51,6 +52,10 @@
             <p id="producto-precio"></p>
             <div class="tarjeta-boton" id="boton-agregar-carrito"></div>
         </section>
+        <div class="mensaje-info">
+            Acá me gustaría un mensaje del tipo: dejanos tu consulta, y link al formulario de contacto.
+            <a href="./contacto.html" style="color:yellow">Contacto</a>
+        </div>
         <div id="mensaje-confirmacion" class="mensaje-confirmacion" role="alert" aria-live="assertive" aria-atomic="true"></div>
     </main>
     <footer class="footer">
