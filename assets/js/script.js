@@ -23,7 +23,7 @@ function resaltarPaginaActual() {
 
 //Función para mostrar productos destacados en Index
 function mostrarProductosDestacados() {
-    fetch('assets/data/productos.json')
+    fetch('./assets/data/productos.json')
     .then(response => response.json())
     .then(data => {
         const destacadosDiv = document.getElementById('productos-destacados');
