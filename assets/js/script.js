@@ -1,3 +1,26 @@
+window.addEventListener('DOMContentLoaded', () => {
+    resaltarPaginaActual();
+});
+
+// Función para resaltar la página actual en el nav
+function resaltarPaginaActual() {
+    const currentPath = window.location.pathname.replace(/\/$/, '');
+    const enlaces = document.querySelectorAll('.nav-bottom a');
+
+    enlaces.forEach(link => {
+        const href = link.getAttribute('href');
+        const resolvedHref = href.startsWith('/') 
+            ? href
+            : new URL(href, window.location.origin + window.location.pathname).pathname.replace(/\/$/, '');
+
+        if (currentPath === resolvedHref) {
+            link.classList.add('activo');
+        } else {
+            link.classList.remove('activo');
+        }
+    });
+}
+
 //Función para mostrar productos destacados en Index
 function mostrarProductosDestacados() {
     fetch('assets/data/productos.json')

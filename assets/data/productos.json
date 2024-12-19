@@ -7,6 +7,9 @@
         "Precio": " $ 24.000,00 ",
         "Disponible": 1,
         "Imagenes": [
+            "../assets/img/productos/budinera_morella_01.JPEG",
+            "../assets/img/productos/budinera_morella_01.JPEG",
+            "../assets/img/productos/budinera_morella_01.JPEG",
             "../assets/img/productos/budinera_morella_01.JPEG"
         ]
     },
@@ -19,6 +22,8 @@
         "Disponible": 1,
         "Imagenes": [
             "../assets/img/productos/cazuela_bigo_01.JPG",
+             "../assets/img/productos/cazuela_bigo_01.JPG",
+             "../assets/img/productos/cazuela_bigo_02.JPG",
              "../assets/img/productos/cazuela_bigo_02.JPG"
         ]
     },
@@ -30,6 +35,9 @@
         "Precio": " $ 32.000,00 ",
         "Disponible": 0,
         "Imagenes": [
+            "https://picsum.photos/300/200?random=15",
+            "https://picsum.photos/300/200?random=15",
+            "https://picsum.photos/300/200?random=15",
             "https://picsum.photos/300/200?random=15"
         ]
     },
@@ -41,6 +49,7 @@
         "Precio": " $ 28.000,00 ",
         "Disponible": 1,
         "Imagenes": [
+            "https://picsum.photos/300/200?random=15",
             "https://picsum.photos/300/200?random=15",
             "https://picsum.photos/300/200?random=15",
             "https://picsum.photos/300/200?random=15"
@@ -55,6 +64,9 @@
         "Precio": " $ 25.000,00 ",
         "Disponible": 1,
         "Imagenes": [
+            "https://picsum.photos/300/200?random=15",
+            "https://picsum.photos/300/200?random=15",
+            "https://picsum.photos/300/200?random=15",
             "https://picsum.photos/300/200?random=15"
         ]
     },
@@ -66,6 +78,9 @@
         "Precio": " $ 20.000,00 ",
         "Disponible": 1,
         "Imagenes": [
+            "https://picsum.photos/300/200?random=15",
+            "https://picsum.photos/300/200?random=15",
+            "https://picsum.photos/300/200?random=15",
             "https://picsum.photos/300/200?random=15"
         ]
     },
@@ -78,6 +93,8 @@
         "Disponible": 1,
         "Imagenes": [
              "../assets/img/productos/aros_amapola_01.JPEG",
+              "../assets/img/productos/aros_amapola_01.JPEG",
+              "../assets/img/productos/aros_amapola_02.JPEG",
               "../assets/img/productos/aros_amapola_02.JPEG"
         ]
     },
@@ -88,6 +105,9 @@
         "Categoría": "Utilitario",
         "Precio": " $ 45.000,00 ",
         "Imagenes": [
+            "../assets/img/productos/jarra_mora_01.JPG",
+            "../assets/img/productos/jarra_mora_01.JPG",
+            "../assets/img/productos/jarra_mora_01.JPG",
             "../assets/img/productos/jarra_mora_01.JPG"
         ]
     },
@@ -128,7 +148,8 @@
         "Precio": " $ 16.000,00 ",
         "Disponible": 1,
         "Imagenes": [
-            "https://picsum.photos/300/200?random=15"
+            "../assets/img/productos/jarro_martita_02.JPEG",
+            "../assets/img/productos/jarro_martita_01.JPEG"
         ]
     },
     {
@@ -139,6 +160,9 @@
         "Precio": " $ 22.000,00",
         "Disponible": 0,
         "Imagenes": [
+            "https://picsum.photos/300/200?random=15",
+            "https://picsum.photos/300/200?random=15",
+            "https://picsum.photos/300/200?random=15",
             "https://picsum.photos/300/200?random=15"
         ]
     },
@@ -150,7 +174,13 @@
         "Precio": " $ 22.000,00",
         "Disponible": 0,
         "Imagenes": [
-            "https://picsum.photos/300/200?random=15"
+            "../assets/img/productos/cerealero_tupac_06.JPG",
+            "../assets/img/productos/cerealero_tupac_05.JPG",
+            "../assets/img/productos/cerealero_tupac_04.JPEG",
+            "../assets/img/productos/cerealero_tupac_03.JPEG",
+            "../assets/img/productos/cerealero_tupac_02.JPEG",
+            "../assets/img/productos/cerealero_tupac_01.JPEG"
+            
         ]
     },
     {
@@ -161,6 +191,9 @@
         "Precio": " $ 25.000,00",
         "Disponible": 1,
         "Imagenes": [
+            "https://picsum.photos/300/200?random=15",
+            "https://picsum.photos/300/200?random=15",
+            "https://picsum.photos/300/200?random=15",
             "https://picsum.photos/300/200?random=15"
         ]
     },
@@ -172,6 +205,9 @@
         "Precio": "$35.000",
         "Disponible": 0,
         "Imagenes": [
+            "https://picsum.photos/300/200?random=15",
+            "https://picsum.photos/300/200?random=15",
+            "https://picsum.photos/300/200?random=15",
             "https://picsum.photos/300/200?random=15"
         ]
 
@@ -184,6 +220,9 @@
         "Precio": "Precio a convenir",
         "Disponible": 1,
         "Imagenes": [
+            "https://picsum.photos/300/200?random=15",
+            "https://picsum.photos/300/200?random=15",
+            "https://picsum.photos/300/200?random=15",
             "https://picsum.photos/300/200?random=15"
         ]
 

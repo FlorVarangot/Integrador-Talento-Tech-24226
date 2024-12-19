@@ -161,7 +161,6 @@ a.logo-link img {
     margin: 1% 0 0 1%;
     border-radius: 50%;
 }
-
   
 .nav-icons {
     display: flex;
@@ -211,6 +210,13 @@ a.logo-link img {
     color: var(--secondary-color);
 }
 
+.nav-bottom a.activo {
+    font-weight: bold;
+    color: #ff6600;
+    text-decoration: underline;
+}
+
+
 .barra-buscar {
     flex-grow: 1;
     display: flex;
@@ -248,15 +254,13 @@ a.logo-link img {
 }
 
 .productos,
-.bio,
 .taller{
     padding: 20px;
 }
 
 .productos,
 .contacto,
-.login,
-.bio{
+.login{
     display: flex;
     flex-wrap: wrap;
     margin-bottom: 15vh;
@@ -384,7 +388,7 @@ a.logo-link img {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: 1fr 1.5fr 1.5fr 1.5fr 1.5fr;
-    padding: 2%;
+    padding: 2% 2% 0;
     justify-items: center;
 }
 
@@ -605,10 +609,7 @@ a.logo-link img {
 
 .subtitulo-bio{
     display: flex;
-    padding: 15px 5px 5px 5px;
-    text-align: left;
     margin-left: 5%;
-    margin-bottom: 1%;
 }
 
 .detalle-carrito {
@@ -749,18 +750,23 @@ a.logo-link img {
 .bio{
     justify-content: center;
     display: flex; 
-    flex-wrap: wrap; 
+    flex-wrap: wrap;
+    padding: 1%;
 }
 
-.bio div,
-.bio2 div {
+.bio div {
     display: flow-root;
     margin: 1rem 4rem;
-    padding: 2rem;
+}
+
+.bio2 div{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 .bio h2{
-    margin-bottom: 2rem;
+    margin-bottom: 1%;
 }
 
 .bio p,
@@ -780,15 +786,14 @@ a.logo-link img {
 
 .img-taller-1 {
     float: right;
-    max-width: 500px;
-    width: 30%;
+    max-height: 400px;
     margin: 0 0 1.25rem 2.5rem;
     border-radius: 8px;
 }
 
 .img-perfil {
     float: left;
-    max-width: 400px;
+    max-width: 260px;
     width: 70%;
     margin: 0 1.25rem 0.25rem 0;
     border-radius: 8px;
@@ -799,11 +804,11 @@ a.logo-link img {
     grid-template-columns: 2fr 1fr 1fr 1fr;
     grid-template-rows: 400px 400px 400px;
     grid-template-areas:
-        'b-img1 b-img2 b-img2 b-img2'
-        'b-img1 b-img3 b-img3 b-img4'
-        'b-img1 b-img5 b-img6 b-img6';
+        'b-img1 b-img2 b-img3 b-img4'
+        'b-img1 b-img5 b-img5 b-img6'
+        'b-img1 b-img5 b-img5 b-img7';
     grid-gap: 2rem;
-    padding: 0 5rem;
+    padding: 1% 5% 2%;
 }
 
 .imagenes-taller .b-img1 {
