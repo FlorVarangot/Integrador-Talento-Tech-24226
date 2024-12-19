@@ -242,14 +242,14 @@ function listarCarrito() {
                     <button class="incrementar" data-id="${producto.id}">+</button>
                 </td>
                 <td>${producto.nombre}</td>
-                <td>$${producto.precio.toFixed(2)}</td>
-                <td>$${totalParcial.toFixed(2)}</td>
+                <td>$${producto.precio.toFixed(4)}</td>
+                <td>$${totalParcial.toFixed(4)}</td>
                 <td><button class="eliminar" title="Quitar del carrito" data-id="${producto.id}"><i class="fas fa-trash-alt"></i></button></td>
             `;
             carritoItems.appendChild(productoRow);
         });
 
-        totalFinal.textContent = total.toFixed(2);
+        totalFinal.textContent = total.toFixed(4);
     }
     console.log('Productos en Carrito:', carrito);
 }
