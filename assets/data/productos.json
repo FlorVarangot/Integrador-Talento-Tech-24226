@@ -7,10 +7,10 @@
         "Precio": " $ 24.000,00 ",
         "Disponible": 1,
         "Imagenes": [
-            "../assets/img/productos/budinera_morella_01.JPEG",
-            "../assets/img/productos/budinera_morella_01.JPEG",
-            "../assets/img/productos/budinera_morella_01.JPEG",
-            "../assets/img/productos/budinera_morella_01.JPEG"
+            "../assets/img/productos/budinera_morella_01.jpg",
+            "../assets/img/productos/budinera_morella_01.jpg",
+            "../assets/img/productos/budinera_morella_01.jpg",
+            "../assets/img/productos/budinera_morella_01.jpg"
         ]
     },
     {
@@ -21,10 +21,10 @@
         "Precio": " $ 18.000,00 ",
         "Disponible": 1,
         "Imagenes": [
-            "../assets/img/productos/cazuela_bigo_01.JPG",
-             "../assets/img/productos/cazuela_bigo_01.JPG",
-             "../assets/img/productos/cazuela_bigo_02.JPG",
-             "../assets/img/productos/cazuela_bigo_02.JPG"
+            "../assets/img/productos/cazuela_bigo_01.jpg",
+             "../assets/img/productos/cazuela_bigo_01.jpg",
+             "../assets/img/productos/cazuela_bigo_02.jpg",
+             "../assets/img/productos/cazuela_bigo_02.jpg"
         ]
     },
     {
@@ -92,10 +92,10 @@
         "Precio": " $ 15.000,00 ",
         "Disponible": 1,
         "Imagenes": [
-             "../assets/img/productos/aros_amapola_01.JPEG",
-              "../assets/img/productos/aros_amapola_01.JPEG",
-              "../assets/img/productos/aros_amapola_02.JPEG",
-              "../assets/img/productos/aros_amapola_02.JPEG"
+             "../assets/img/productos/aros_amapola_01.jpg",
+              "../assets/img/productos/aros_amapola_01.jpg",
+              "../assets/img/productos/aros_amapola_02.jpg",
+              "../assets/img/productos/aros_amapola_02.jpg"
         ]
     },
     {
@@ -105,10 +105,10 @@
         "Categoría": "Utilitario",
         "Precio": " $ 45.000,00 ",
         "Imagenes": [
-            "../assets/img/productos/jarra_mora_01.JPG",
-            "../assets/img/productos/jarra_mora_01.JPG",
-            "../assets/img/productos/jarra_mora_01.JPG",
-            "../assets/img/productos/jarra_mora_01.JPG"
+            "../assets/img/productos/jarra_mora_01.jpg",
+            "../assets/img/productos/jarra_mora_01.jpg",
+            "../assets/img/productos/jarra_mora_01.jpg",
+            "../assets/img/productos/jarra_mora_01.jpg"
         ]
     },
     {
@@ -119,10 +119,10 @@
         "Precio": " $ 18.000,00 ",
         "Disponible": 1,
         "Imagenes": [
-             "../assets/img/productos/mate_bolita_01.JPG",
-             "../assets/img/productos/mate_bolita_02.JPG",
-             "../assets/img/productos/mate_bolita_03.JPG",
-             "../assets/img/productos/mate_bolita_04.JPG"
+             "../assets/img/productos/mate_bolita_01.jpg",
+             "../assets/img/productos/mate_bolita_02.jpg",
+             "../assets/img/productos/mate_bolita_03.jpg",
+             "../assets/img/productos/mate_bolita_04.jpg"
         ]
     },
     {
@@ -133,11 +133,11 @@
         "Precio": " $ 15.000,00 ",
         "Disponible": 1,
         "Imagenes": [
-             "../assets/img/productos/platito_peky_01.JPEG",
-             "../assets/img/productos/platito_peky_02.JPEG",
-             "../assets/img/productos/platito_peky_03.JPEG",
-             "../assets/img/productos/platito_peky_04.JPEG",
-             "../assets/img/productos/platito_peky_05.JPG"
+             "../assets/img/productos/platito_peky_01.jpg",
+             "../assets/img/productos/platito_peky_02.jpg",
+             "../assets/img/productos/platito_peky_03.jpg",
+             "../assets/img/productos/platito_peky_04.jpg",
+             "../assets/img/productos/platito_peky_05.jpg"
         ]
     },
     {
@@ -148,8 +148,8 @@
         "Precio": " $ 16.000,00 ",
         "Disponible": 1,
         "Imagenes": [
-            "../assets/img/productos/jarro_martita_02.JPEG",
-            "../assets/img/productos/jarro_martita_01.JPEG"
+            "../assets/img/productos/jarro_martita_02.jpg",
+            "../assets/img/productos/jarro_martita_01.jpg"
         ]
     },
     {
@@ -174,12 +174,12 @@
         "Precio": " $ 22.000,00",
         "Disponible": 0,
         "Imagenes": [
-            "../assets/img/productos/cerealero_tupac_06.JPG",
-            "../assets/img/productos/cerealero_tupac_05.JPG",
-            "../assets/img/productos/cerealero_tupac_04.JPEG",
-            "../assets/img/productos/cerealero_tupac_03.JPEG",
-            "../assets/img/productos/cerealero_tupac_02.JPEG",
-            "../assets/img/productos/cerealero_tupac_01.JPEG"
+            "../assets/img/productos/cerealero_tupac_06.jpg",
+            "../assets/img/productos/cerealero_tupac_05.jpg",
+            "../assets/img/productos/cerealero_tupac_04.jpg",
+            "../assets/img/productos/cerealero_tupac_03.jpg",
+            "../assets/img/productos/cerealero_tupac_02.jpg",
+            "../assets/img/productos/cerealero_tupac_01.jpg"
             
         ]
     },

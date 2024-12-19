@@ -8,7 +8,6 @@ document.addEventListener('DOMContentLoaded', function() {
     form.addEventListener('submit', function(event) {
         let valid = true;
 
-        // Validar correo electrónico vacío
         if (emailInput.value.trim() === '') {
             mostrarError(emailInput, 'Por favor, ingresa tu correo electrónico.');
             valid = false;
