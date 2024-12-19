@@ -9,9 +9,7 @@ function resaltarPaginaActual() {
 
     enlaces.forEach(link => {
         const href = link.getAttribute('href');
-        const resolvedHref = href.startsWith('/') 
-            ? href
-            : new URL(href, window.location.origin + window.location.pathname).pathname.replace(/\/$/, '');
+        const resolvedHref = new URL(href, window.location.origin).pathname.replace(/\/$/, '');
 
         if (currentPath === resolvedHref) {
             link.classList.add('activo');
