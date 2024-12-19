@@ -31,42 +31,6 @@ function mostrarProductosDestacados() {
     .catch(error => console.error('Error al cargar el archivo JSON:', error));
 }
 
-//Función para ver detalles del producto
-function verDetalleProducto() {
-    const urlParams = new URLSearchParams(window.location.search);
-    const productId = urlParams.get('id');
-    fetch('../assets/data/productos.json')
-    .then(response => response.json())
-    .then(data => {
-        const producto = data.find(p => p.Id === productId);
-        if (producto) {
-            document.getElementById('producto-nombre').textContent = producto.Nombre;
-            const galeriaDiv = document.getElementById('producto-galeria');
-            galeriaDiv.innerHTML = '';
-            producto.Imagenes.forEach(imagen => {
-                const imgElement = document.createElement('img');
-                imgElement.src = imagen;
-                imgElement.alt = producto.Nombre;
-                galeriaDiv.appendChild(imgElement);
-            });
-            document.getElementById('producto-descripcion').textContent = producto.Descripcion;
-            document.getElementById('producto-precio').textContent = producto.Precio;
-
-            const botonDiv = document.getElementById('boton-agregar-carrito');
-            botonDiv.innerHTML = `
-            <button type="button" class="agregar" data-id="${producto.Id}" ${producto.Disponible ? '' : 'disabled'}>¡Lo quiero!</button>
-            `;
-
-            if (producto.Disponible === 0) {
-                document.getElementById('sin-stock-detalle').style.display = 'block';
-            } else {
-                document.getElementById('sin-stock-detalle').style.display = 'none';
-            }
-        }
-    })
-    .catch(error => console.error('Error al cargar el archivo JSON:', error));
-}
-
 //Función para listar todos los productos en Productos
 function listarProductos() {
     fetch('../assets/data/productos.json')
@@ -88,7 +52,7 @@ function listarProductos() {
                     </article>
                 </a>
                 <div class="tarjeta-boton">
-                    <a href="./pages/detalle.html?id=${producto.Id}" class="link">Ver más</a>
+                    <a href="../pages/detalle.html?id=${producto.Id}" class="link">Ver más</a>
                     <button type="button" class="agregar" data-id="${producto.Id}" ${producto.Disponible ? '' : 'disabled'}>¡Lo quiero!</button>
                 </div>
             </div>
@@ -205,7 +169,8 @@ function agregarAlCarrito(id) {
                 id: producto.Id,
                 nombre: producto.Nombre,
                 precio: parseFloat(producto.Precio.replace(/[^0-9.-]+/g, "")),
-                cantidad: 1
+                cantidad: 1,
+                imagen: producto.Imagenes[0]
             };
             carrito.push(nuevoProducto);
             }
@@ -231,36 +196,37 @@ function listarCarrito() {
     carritoItems.innerHTML = '';
     
     if (carrito.length === 0) {
-      mensajeCarritoVacio.style.display = 'block';
-      detalleCarrito.style.display = 'none';
-      mensajeInfo.style.display = 'none';
+        mensajeCarritoVacio.style.display = 'block';
+        detalleCarrito.style.display = 'none';
+        mensajeInfo.style.display = 'none';
     } else {
-      mensajeCarritoVacio.style.display = 'none';
-      detalleCarrito.style.display = 'block';
-      mensajeInfo.style.display = 'block';
-      
-      let total = 0;
-      
-      carrito.forEach(producto => {
-        const totalParcial = producto.precio * producto.cantidad;
-        total += totalParcial;
+        mensajeCarritoVacio.style.display = 'none';
+        detalleCarrito.style.display = 'block';
+        mensajeInfo.style.display = 'block';
         
-        const productoRow = document.createElement('tr');
-        productoRow.innerHTML = `
-        <td>
-          <button class="decrementar" data-id="${producto.id}">-</button>
-          ${producto.cantidad}
-          <button class="incrementar" data-id="${producto.id}">+</button>
-        </td>
-          <td>${producto.nombre}</td>
-          <td>$${producto.precio.toFixed(4)}</td>
-          <td>$${totalParcial.toFixed(4)}</td>
-          <td><button class="eliminar" title="Quitar del carrito" data-id="${producto.id}"><i class="fas fa-trash-alt"></i></button></td>
-        `;
-        carritoItems.appendChild(productoRow);
-      });
+        let total = 0;
+        
+        carrito.forEach(producto => {
+            const totalParcial = producto.precio * producto.cantidad;
+            total += totalParcial;
+            
+            const productoRow = document.createElement('tr');
+            productoRow.innerHTML = `
+                <td><img src="${producto.imagen}" alt="${producto.nombre}" class="imagen-producto"></td>
+                <td>
+                    <button class="decrementar" data-id="${producto.id}">-</button>
+                    ${producto.cantidad}
+                    <button class="incrementar" data-id="${producto.id}">+</button>
+                </td>
+                <td>${producto.nombre}</td>
+                <td>$${producto.precio.toFixed(2)}</td>
+                <td>$${totalParcial.toFixed(2)}</td>
+                <td><button class="eliminar" title="Quitar del carrito" data-id="${producto.id}"><i class="fas fa-trash-alt"></i></button></td>
+            `;
+            carritoItems.appendChild(productoRow);
+        });
 
-      totalFinal.textContent = total.toFixed(4);
+        totalFinal.textContent = total.toFixed(2);
     }
     console.log('Productos en Carrito:', carrito);
 }
@@ -425,3 +391,14 @@ function dibujarEstrellas(puntos) {
     }
     return estrellasHTML;
 }
+
+//Validación para que el logo de Footer navegue al index según dónde esté
+document.addEventListener('DOMContentLoaded', function() {
+    const footerLogoLink = document.getElementById('footer-logo-link');
+    if (footerLogoLink) {
+        const isIndex = window.location.pathname === '/index.html' || window.location.pathname === '/';
+        footerLogoLink.href = isIndex ? './index.html' : '../index.html';
+    } else {
+        console.error('Elemento con ID "footer-logo-link" no encontrado.');
+    }
+});

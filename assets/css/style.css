@@ -13,13 +13,11 @@
 }
 
 html, body{
-    height: 1vh;
     margin: 0;
     padding: 0;
 }
 
 html {
-    background-color: var(--background-color);
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     color: var(--primary-color);
     font-size: var(--font-size-base);
@@ -141,7 +139,7 @@ button[disabled] {
     align-items: center;
 }
 
-.logo {
+.logo{
     width: 6%;
     height: auto;
     margin: 1% 0 0 1%;
@@ -152,6 +150,18 @@ button[disabled] {
     transform: scale(1.2);
     transition: transform 0.3s ease;
 }
+
+a.logo-link {
+    display: inline-block;
+}
+
+a.logo-link img {
+    width: 6%;
+    height: auto;
+    margin: 1% 0 0 1%;
+    border-radius: 50%;
+}
+
   
 .nav-icons {
     display: flex;
@@ -238,7 +248,7 @@ button[disabled] {
 }
 
 .productos,
-.biografia,
+.bio,
 .taller{
     padding: 20px;
 }
@@ -246,9 +256,10 @@ button[disabled] {
 .productos,
 .contacto,
 .login,
-.bio {
+.bio{
     display: flex;
     flex-wrap: wrap;
+    margin-bottom: 15vh;
 }
 
 .productos {
@@ -263,8 +274,8 @@ button[disabled] {
 }
 
 .tarjeta-link {
-    border: 1px solid var(--primary-color);
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1), 0 0 10px var(--third-color);
+    border: 1px solid var(--third-color);
+    box-shadow: 0 0 10px var(--primary-color);
     width: 300px;
     padding: 1%;
     overflow: hidden;
@@ -411,59 +422,62 @@ button[disabled] {
 }
 
 
-/* _____________________________________________________   */
-
 .detalle-producto {
-    display: grid;
-    grid-template-columns: 1fr;
-    grid-template-rows: auto;
-    grid-auto-rows: minmax(100px, auto);
+    display: flex;
+    flex-direction: column;
     gap: 2%;
-    padding: 0 2%;
+    padding: 2%;
     border: 1px solid var(--primary-color);
     border-radius: 5px;
     background-color: var(--background-alternativo);
     margin: 5%;
-  }
-  
-  .detalle-producto h2 {
-    grid-column: 1 / -1;
-    font-size: var(--font-size-medium);
-    margin: 1.5%;
-  }
-  
-  .detalle-producto #producto-galeria {
-    grid-column: 1 / -1;
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(20%, 1fr));
-    gap: 10%;
-  }
+}
 
-  #producto-galeria img{
+.producto-galeria {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 2%;
+}
+
+.producto-galeria img {
+    width: 75%;
+    max-width:400px;
+    height: auto;
     border-radius: 5%;
-  }
-  
-  .detalle-producto #producto-descripcion {
-    grid-column: 1 / -1;
+}
+
+.producto-galeria img:hover{
+    transform: scale(1.2);
+}
+
+.producto-descripcion,
+.producto-precio {
     font-size: var(--font-size-small);
+    color:var(--third-color);
     line-height: 1.5;
-  }
-  
-  .detalle-producto #producto-precio {
-    grid-column: 1 / -1;
+    margin: 1.5% 0;
+}
+
+.producto-precio {
     font-size: var(--font-size-icono);
     font-weight: bold;
     background-color: var(--third-color);
     color: var(--primary-color);
-  }
-  
-  .detalle-producto .tarjeta-boton {
+    padding: 10px;
+    text-align: center;
+    border-radius: 5px;
+}
+
+.carrito{
+    margin-bottom: 15vh;
+}
+
+.agregar-carrito {
     display: flex;
     justify-content: center;
     align-items: center;
-  }
-
-/* _______________________________________SEGUIR TRABAJANDO EN ESTO_______________________________________   */
+    margin-top: 10px;
+}
 
 .carrito-vacio {
     display: flex;
@@ -521,10 +535,16 @@ button[disabled] {
     border-radius: 5px;
 }
 
+.detalle-carrito img {
+    width: 50px;
+    height: auto;
+    border-radius: 5px;
+}
+
 .error-message {
     color: red;
     font-size: var(--font-size-mini);
-    margin-top: 1%;
+    margin-top: 0.5%;
 }
 
 .error {
@@ -568,7 +588,6 @@ button[disabled] {
     display: none;
 }
 
-
 .titulo{
     padding-top: 6%;
     display: flex;
@@ -581,6 +600,14 @@ button[disabled] {
     justify-content: center;
     padding: 15px 5px 5px 5px;
     text-align: left;
+    margin-bottom: 1%;
+}
+
+.subtitulo-bio{
+    display: flex;
+    padding: 15px 5px 5px 5px;
+    text-align: left;
+    margin-left: 5%;
     margin-bottom: 1%;
 }
 
@@ -683,7 +710,7 @@ button[disabled] {
     padding: 2%;
     margin: 2%;
     background-color: var(--background-alternativo);
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 8px var(--third-color);
     width: 75%;
     max-width: 75%;
 }
@@ -713,31 +740,102 @@ button[disabled] {
     color: var(--third-color);
 }
 
+.detalle-producto button:hover{
+    transform: scale(1.02);
+    background-color: var(--secondary-color);
+    color: var(--third-color);
+}
+
 .bio{
     justify-content: center;
+    display: flex; 
+    flex-wrap: wrap; 
 }
 
-.biografia,
-.taller{
-    line-height: 1.5;
-    max-width: 90vw;
-    margin:auto;
+.bio div,
+.bio2 div {
+    display: flow-root;
+    margin: 1rem 4rem;
+    padding: 2rem;
 }
 
-.taller img,
-.biografia img{
-    max-width: 16%;
-    border-radius:5px;
-    margin: 5px;
+.bio h2{
+    margin-bottom: 2rem;
 }
 
-.biografia img{
+.bio p,
+.bio2 p{
+    font-size: var(--font-size-icono);
+    margin-bottom: 1rem;
+}
+
+.bio2 img{
+    align-self: center;
+    max-width: 700px;
+    width: 30%;
+    margin: 0 0 1.25rem 2.5rem;
+    border: solid 2px var(--primary-color);
+    border-radius: 50%;
+}
+
+.img-taller-1 {
+    float: right;
+    max-width: 500px;
+    width: 30%;
+    margin: 0 0 1.25rem 2.5rem;
+    border-radius: 8px;
+}
+
+.img-perfil {
     float: left;
-    margin-right: 15px;
+    max-width: 400px;
+    width: 70%;
+    margin: 0 1.25rem 0.25rem 0;
+    border-radius: 8px;
 }
 
-.imagenes-taller{
-    text-align: center;
+.imagenes-taller {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1fr;
+    grid-template-rows: 400px 400px 400px;
+    grid-template-areas:
+        'b-img1 b-img2 b-img2 b-img2'
+        'b-img1 b-img3 b-img3 b-img4'
+        'b-img1 b-img5 b-img6 b-img6';
+    grid-gap: 2rem;
+    padding: 0 5rem;
+}
+
+.imagenes-taller .b-img1 {
+    grid-area: b-img1;
+}
+
+.imagenes-taller.b-img2 {
+    grid-area: b-img2;
+}
+
+.imagenes-taller .b-img3 {
+    grid-area: b-img3;
+}
+
+.imagenes-taller .b-img4 {
+    grid-area: b-img4;
+}
+
+.imagenes-taller .b-img5 {
+    grid-area: b-img5;
+}
+
+.imagenes-taller .b-img6 {
+    grid-area: b-img6;
+}
+
+.bio-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: 2s;
+    border-radius: 8px;
 }
 
 .form-group.checkbox-group {

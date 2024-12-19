@@ -7,7 +7,7 @@
         "Precio": " $ 24.000,00 ",
         "Disponible": 1,
         "Imagenes": [
-            "https://picsum.photos/300/200?random=15"
+            "../assets/img/productos/budinera_morella_01.JPEG"
         ]
     },
     {
@@ -18,7 +18,8 @@
         "Precio": " $ 18.000,00 ",
         "Disponible": 1,
         "Imagenes": [
-            "https://picsum.photos/300/200?random=15"
+            "../assets/img/productos/cazuela_bigo_01.JPG",
+             "../assets/img/productos/cazuela_bigo_02.JPG"
         ]
     },
     {
@@ -76,7 +77,8 @@
         "Precio": " $ 15.000,00 ",
         "Disponible": 1,
         "Imagenes": [
-            "https://picsum.photos/300/200?random=15"
+             "../assets/img/productos/aros_amapola_01.JPEG",
+              "../assets/img/productos/aros_amapola_02.JPEG"
         ]
     },
     {
@@ -86,7 +88,7 @@
         "Categoría": "Utilitario",
         "Precio": " $ 45.000,00 ",
         "Imagenes": [
-            "https://picsum.photos/300/200?random=15"
+            "../assets/img/productos/jarra_mora_01.JPG"
         ]
     },
     {
@@ -97,7 +99,10 @@
         "Precio": " $ 18.000,00 ",
         "Disponible": 1,
         "Imagenes": [
-            "https://picsum.photos/300/200?random=15"
+             "../assets/img/productos/mate_bolita_01.JPG",
+             "../assets/img/productos/mate_bolita_02.JPG",
+             "../assets/img/productos/mate_bolita_03.JPG",
+             "../assets/img/productos/mate_bolita_04.JPG"
         ]
     },
     {
@@ -108,7 +113,11 @@
         "Precio": " $ 15.000,00 ",
         "Disponible": 1,
         "Imagenes": [
-            "https://picsum.photos/300/200?random=15"
+             "../assets/img/productos/platito_peky_01.JPEG",
+             "../assets/img/productos/platito_peky_02.JPEG",
+             "../assets/img/productos/platito_peky_03.JPEG",
+             "../assets/img/productos/platito_peky_04.JPEG",
+             "../assets/img/productos/platito_peky_05.JPG"
         ]
     },
     {

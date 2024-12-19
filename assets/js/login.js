@@ -16,7 +16,6 @@ document.addEventListener('DOMContentLoaded', function() {
             limpiarError(emailInput);
         }
 
-        // Validar contraseña vacía
         if (passwordInput.value.trim() === '') {
             mostrarError(passwordInput, 'Por favor, ingresa tu contraseña.');
             valid = false;
@@ -27,7 +26,6 @@ document.addEventListener('DOMContentLoaded', function() {
         if (!valid) {
             event.preventDefault();
         } else {
-            loginMessage.textContent = 'Iniciando sesión...';
             loginMessage.style.display = 'block';
         }
     });
