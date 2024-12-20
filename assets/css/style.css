@@ -496,7 +496,8 @@ a.logo-link img {
     margin: 3% 3% 5%;
 }
 
-.carrito-vacio a {
+.carrito-vacio a,
+.ver-mas a {
     display: inline-block;
     margin-top: 10px;
     padding: 10px 20px;
@@ -641,6 +642,10 @@ a.logo-link img {
     margin: 1.5% 5%;
 }
 
+.ir-a-pagar{
+    max-width: 160px;
+}
+
 .texto-total { 
     text-align: right;
     margin: 2% 5%;
@@ -735,8 +740,8 @@ a.logo-link img {
 }
 
 .productos button:hover,
-.destacados button:hover {
-    transform: scale(1.02);
+.destacados button:hover,
+.carrito button:hover {
     background-color: var(--primary-color);
     color: var(--third-color);
 }
