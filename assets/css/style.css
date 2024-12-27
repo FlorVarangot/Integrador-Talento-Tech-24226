@@ -216,7 +216,6 @@ a.logo-link img {
     text-decoration: underline;
 }
 
-
 .barra-buscar {
     flex-grow: 1;
     display: flex;
@@ -267,7 +266,7 @@ a.logo-link img {
 }
 
 .productos {
-    gap: 10px;
+    gap: 2vw;
     justify-content: center;
     align-content: center;
 }
@@ -292,6 +291,7 @@ a.logo-link img {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    /* align-items: center; */
 }
 
 .tarjeta-boton{
